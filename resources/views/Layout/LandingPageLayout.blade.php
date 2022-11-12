@@ -239,7 +239,7 @@
                     <p class="mb-1">Senin - Jumat</p>
                     <h6 class="text-light">08:00 am - 01:00 pm</h6>
                     <p class="mb-1">Minggu</p>
-                    <h6 class="text-light">Closed</h6>
+                    <h6 class="text-light">Libur</h6>
                     <p class="mb-1">Tanggal Merah Dan Hari Besar</p>
                     <h6 class="text-light">Libur</h6>
                     

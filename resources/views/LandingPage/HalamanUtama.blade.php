@@ -1,47 +1,6 @@
 @extends('Layout.LandingPageLayout')
 @section('LandigPage')
- <!-- Testimonial Start -->
- <div class="container-xxl py-5">
-    <div class="container">
-        <div class="text-center mx-auto wow fadeInUp" data-wow-delay="0.1s" style="max-width: 600px;">
-            <p class="fw-medium text-uppercase text-primary mb-2">Jam Operasional Poliklinik DAN IGD</p>
-        </div>
-        <div class="owl-carousel testimonial-carousel wow fadeInUp" data-wow-delay="0.1s">
-            <div class="testimonial-item text-center">
-                <div class="testimonial-img position-relative">
-                    <h5 class="mb-1">Intalasi Rawat Jalan</h5>
-                </div>
-                <div class="testimonial-text text-center rounded p-4">
-                    <h5 class="text-white mb-1">Jam Pelayanan Poliklinik</h5>
-                    <h3 >Senin - Jumat</h3>
-                    <h3 >08:00  - 13:00 WITA</h3>
-                </div>
-            </div>
-            <div class="testimonial-item text-center">
-                <div class="testimonial-img position-relative">
-                    <h5 class="mb-1">Intalasi Rawat Jalan</h5>
-                </div>
-                <div class="testimonial-text text-center rounded p-4">
-                    <h5 class="text-white mb-1">Jam Pelayanan Poliklinik</h5>
-                    <h3 >Sabtu-Minggu Dan Hari Besar</h3>
-                    <h3 >Libur</h3>
-                </div>
-            </div>
-            <div class="testimonial-item text-center">
-                <div class="testimonial-img position-relative">
-                    <h5 class="mb-1">Intalasi Rawat Darurat</h5>
-                </div>
-                <div class="testimonial-text text-center rounded p-4">
-                    <h3>Melayani Selama 24 Jam </h3>
-                    
-                </div>
-            </div>
-            
-        </div>
-    </div>
-</div>
-<!-- Testimonial End -->
-
+ 
     <!-- About Start -->
     <div class="container-xxl py-5">
         <div class="container">
