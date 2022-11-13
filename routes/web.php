@@ -15,12 +15,12 @@ use App\Http\Controllers\WebsiteController;
 */
 // Website
 Route::get('/', [WebsiteController::class, 'index']);
-Route::get('/CapaianIndikator', [WebsiteController::class, 'CapaianIndikator']);
-Route::get('/BeritaKesehatan', [WebsiteController::class, 'BeritaKesehatan']);
-Route::get('/JadwalDokter', [WebsiteController::class, 'JadwalDokter']);
-Route::get('/KritikdanSaran', [WebsiteController::class, 'KritikdanSaran']);
-Route::get('/TataTertib', [WebsiteController::class, 'TataTertib']);
-Route::get('/LaporanKeluhan', [WebsiteController::class, 'LaporanKeluhan']);
+Route::get('/Informasi/CapaianIndikator', [WebsiteController::class, 'CapaianIndikator']);
+Route::get('/Informasi/BeritaKesehatan', [WebsiteController::class, 'BeritaKesehatan']);
+Route::get('/Informasi/JadwalDokter', [WebsiteController::class, 'JadwalDokter']);
+Route::get('/Informasi/KritikdanSaran', [WebsiteController::class, 'KritikdanSaran']);
+Route::get('/Informasi/TataTertib', [WebsiteController::class, 'TataTertib']);
+Route::get('/Informasi/LaporanKeluhan', [WebsiteController::class, 'LaporanKeluhan']);
 
 
 // Website

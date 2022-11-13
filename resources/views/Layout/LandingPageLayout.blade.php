@@ -71,16 +71,16 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarCollapse">
             <div class="navbar-nav ms-auto p-4 p-lg-0">
-                <a href="/" class="nav-item nav-link active">Home</a>
+                <a href="/" class="nav-item nav-link {{ Request::is('/') ? 'active' : '' }}">Home</a>
                 <div class="nav-item dropdown">
-                    <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Informasi</a>
-                    <div class="dropdown-menu bg-light m-0">
-                        <a href="/CapaianIndikator" class="dropdown-item">Capaian Indikator PMKP</a>
-                        <a href="/BeritaKesehatan" class="dropdown-item">Berita Kesehatan</a>
-                        <a href="/JadwalDokter" class="dropdown-item">Jadwal Dokter</a>
-                        <a href="/TataTertib" class="dropdown-item">Tata Tertib Pengunjung</a>
-                        <a href="/KritikdanSaran" class="dropdown-item">Kritik Dan Saran</a>
-                        <a href="/LaporanKeluhan" class="dropdown-item">Lapor Keluhan</a>
+                    <a href="#" class="nav-link dropdown-toggle {{ Request::is('Informasi/*') ? 'active' : '' }}" data-bs-toggle="dropdown">Informasi</a>
+                    <div class="dropdown-menu bg-light m-0 ">
+                        <a href="/Informasi/CapaianIndikator" class="dropdown-item {{ Request::is('Informasi/CapaianIndikator') ? 'active' : '' }}">Capaian Indikator PMKP</a>
+                        <a href="/Informasi/BeritaKesehatan" class="dropdown-item {{ Request::is('Informasi/BeritaKesehatan') ? 'active' : '' }}">Berita Kesehatan</a>
+                        <a href="/Informasi/JadwalDokter" class="dropdown-item {{ Request::is('Informasi/JadwalDokter') ? 'active' : '' }}">Jadwal Dokter</a>
+                        <a href="/Informasi/TataTertib" class="dropdown-item {{ Request::is('Informasi/TataTertib') ? 'active' : '' }}">Tata Tertib Pengunjung</a>
+                        <a href="/Informasi/KritikdanSaran" class="dropdown-item {{ Request::is('Informasi/KritikdanSaran') ? 'active' : '' }}">Kritik Dan Saran</a>
+                        <a href="/Informasi/LaporanKeluhan" class="dropdown-item {{ Request::is('Informasi/LaporanKeluhan') ? 'active' : '' }}">Lapor Keluhan</a>
                     </div>
                 </div>
                 <div class="nav-item dropdown">
@@ -119,7 +119,7 @@
         <div id="header-carousel" class="carousel slide" data-bs-ride="carousel">
             <div class="carousel-inner">
                 <div class="carousel-item active">
-                    <img class="w-100" src="img/dara1.jpg" alt="Image">
+                    <img class="w-100" src="{{ asset('img/dara1.jpg') }}" alt="Image">
                     <div class="carousel-caption">
                         <div class="container">
                             <div class="row justify-content-center">
@@ -135,7 +135,7 @@
                     </div>
                 </div>
                 <div class="carousel-item">
-                    <img class="w-100" src="img/dara2.jpg" alt="Image">
+                    <img class="w-100" src="{{ asset('img/dara2.jpg') }}" alt="Image">
                     <div class="carousel-caption">
                         <div class="container">
                             <div class="row justify-content-center">
@@ -151,7 +151,7 @@
                     </div>
                 </div>
                 <div class="carousel-item">
-                    <img class="w-100" src="img/dara3.jpg" alt="Image">
+                    <img class="w-100" src="{{ asset('img/dara3.jpg') }}" alt="Image">
                     <div class="carousel-caption">
                         <div class="container">
                             <div class="row justify-content-center">
@@ -167,7 +167,7 @@
                     </div>
                 </div>
                 <div class="carousel-item">
-                    <img class="w-100" src="img/dara4.jpg" alt="Image">
+                    <img class="w-100" src="{{ asset('img/dara4.jpg') }}" alt="Image">
                     <div class="carousel-caption">
                         <div class="container">
                             <div class="row justify-content-center">

@@ -14,7 +14,7 @@ class WebsiteController extends Controller
 
     public function CapaianIndikator()
     {
-        return view('LandingPage.Fasilitas.CapaianIndikator');
+        return view('LandingPage.Informasi.CapaianIndikator');
     }
 
     public function BeritaKesehatan()

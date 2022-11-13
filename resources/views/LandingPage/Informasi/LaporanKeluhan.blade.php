@@ -18,14 +18,14 @@
                             </div>
                             <div class="col-md-6">
                                 <div class="form-floating">
-                                    <input type="text" class="form-control" id="name" placeholder="Your Name">
-                                    <label for="name">Your Name</label>
+                                    <input type="text" class="form-control" id="NamaPelapor" placeholder="Nama Lengkap">
+                                    <label for="nama">Nama</label>
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="form-floating">
-                                    <input type="email" class="form-control" id="email" placeholder="Your Email">
-                                    <label for="email">Your Email</label>
+                                    <input type="alamat" class="form-control" id="alamat" placeholder="Alamat">
+                                    <label for="alamat">Your Email</label>
                                 </div>
                             </div>
                             <div class="col-md-6">
@@ -51,20 +51,20 @@
                             </div>
                             <div class="col-md-6">
                                 <div class="form-floating">
-                                    <input type="email" class="form-control" id="email" placeholder="Your Email">
-                                    <label for="email">Your Email</label>
+                                    <input type="text" class="form-control" id="NamaPasien" placeholder="Nama Pasien">
+                                    <label for="email">Nama Pasienl</label>
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="form-floating">
-                                    <input type="text" class="form-control" id="name" placeholder="Your Name">
-                                    <label for="name">Your Name</label>
+                                    <input type="number" class="form-control" id="norm" placeholder="No Rekam Medik">
+                                    <label for="name">No Rekam Medik</label>
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="form-floating">
-                                    <input type="email" class="form-control" id="email" placeholder="Your Email">
-                                    <label for="email">Your Email</label>
+                                    <input type="date" class="form-control" id="tanggalpelaporan" >
+                                    
                                 </div>
                             </div>
                             <div class="col-md-6">
@@ -81,9 +81,21 @@
                             </div>
                             
                             <div class="col-12">
-                                <div class="form-floating">
-                                    <input type="text" class="form-control" id="subject" placeholder="Subject">
-                                    <label for="subject">Subject</label>
+                                <div class="form-group">
+                                    <select class="choices form-select">
+                                        <optgroup label="Figures">
+                                            <option value="romboid">Romboid</option>
+                                            <option value="trapeze">Trapeze</option>
+                                            <option value="triangle">Triangle</option>
+                                            <option value="polygon">Polygon</option>
+                                        </optgroup>
+                                        <optgroup label="Colors">
+                                            <option value="red">Red</option>
+                                            <option value="green">Green</option>
+                                            <option value="blue">Blue</option>
+                                            <option value="purple">Purple</option>
+                                        </optgroup>
+                                    </select>
                                 </div>
                             </div>
                             <div class="col-12">
@@ -93,7 +105,8 @@
                                 </div>
                             </div>
                             <div class="col-12">
-                                <button class="btn btn-primary py-3 px-5" type="submit">Send Message</button>
+                                <button class="btn btn-primary py-3 px-5" type="submit">Kirim</button>
+                                <button class="btn btn-primary py-3 px-5" type="reset">Reset</button>
                             </div>
                         </div>
                     </form>
