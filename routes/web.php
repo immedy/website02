@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\WebsiteController;
 
 /*
 |--------------------------------------------------------------------------
@@ -12,7 +13,14 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+// Website
+Route::get('/', [WebsiteController::class, 'index']);
+Route::get('/CapaianIndikator', [WebsiteController::class, 'CapaianIndikator']);
+Route::get('/BeritaKesehatan', [WebsiteController::class, 'BeritaKesehatan']);
+Route::get('/JadwalDokter', [WebsiteController::class, 'JadwalDokter']);
+Route::get('/KritikdanSaran', [WebsiteController::class, 'KritikdanSaran']);
+Route::get('/TataTertib', [WebsiteController::class, 'TataTertib']);
+Route::get('/LaporanKeluhan', [WebsiteController::class, 'LaporanKeluhan']);
 
-Route::get('/', function () {
-    return view('LandingPage.HalamanUtama');
-});
+
+// Website

@@ -71,16 +71,16 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarCollapse">
             <div class="navbar-nav ms-auto p-4 p-lg-0">
-                <a href="index.html" class="nav-item nav-link active">Home</a>
+                <a href="/" class="nav-item nav-link active">Home</a>
                 <div class="nav-item dropdown">
                     <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Informasi</a>
                     <div class="dropdown-menu bg-light m-0">
-                        <a href="" class="dropdown-item">Capaian Indikator PMKP</a>
-                        <a href="" class="dropdown-item">Berita Kesehatan</a>
-                        <a href="" class="dropdown-item">Jadwal Dokter</a>
-                        <a href="" class="dropdown-item">Tata Tertib Pengunjung</a>
-                        <a href="" class="dropdown-item">Kritik Dan Saran</a>
-                        <a href="" class="dropdown-item">Pelporan Keluhan</a>
+                        <a href="/CapaianIndikator" class="dropdown-item">Capaian Indikator PMKP</a>
+                        <a href="/BeritaKesehatan" class="dropdown-item">Berita Kesehatan</a>
+                        <a href="/JadwalDokter" class="dropdown-item">Jadwal Dokter</a>
+                        <a href="/TataTertib" class="dropdown-item">Tata Tertib Pengunjung</a>
+                        <a href="/KritikdanSaran" class="dropdown-item">Kritik Dan Saran</a>
+                        <a href="/LaporanKeluhan" class="dropdown-item">Lapor Keluhan</a>
                     </div>
                 </div>
                 <div class="nav-item dropdown">
@@ -90,14 +90,6 @@
                         <a href="" class="dropdown-item">Struktur Organisasi</a>
                         <a href="" class="dropdown-item">Sejarah Rumah Sakit</a>
 
-                    </div>
-                </div>
-                <div class="nav-item dropdown">
-                    <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Profil Rumah Sakit</a>
-                    <div class="dropdown-menu bg-light m-0">
-                        <a href="" class="dropdown-item">Visi, Misi dan Motto</a>
-                        <a href="" class="dropdown-item">Struktur Organisasi</a>
-                        <a href="" class="dropdown-item">Sejarah Rumah Sakit</a>
                     </div>
                 </div>
                 <div class="nav-item dropdown">
@@ -238,7 +230,7 @@
                     <h5 class="text-white mb-4">Jam Pelayanan Poliklinik</h5>
                     <p class="mb-1">Senin - Jumat</p>
                     <h6 class="text-light">08:00 am - 01:00 pm</h6>
-                    <p class="mb-1">Minggu</p>
+                    <p class="mb-1">Sabtu - Minggu</p>
                     <h6 class="text-light">Libur</h6>
                     <p class="mb-1">Tanggal Merah Dan Hari Besar</p>
                     <h6 class="text-light">Libur</h6>
