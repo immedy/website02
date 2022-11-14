@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\DashboardController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\WebsiteController;
 
@@ -24,3 +25,4 @@ Route::get('/Informasi/LaporanKeluhan', [WebsiteController::class, 'LaporanKeluh
 
 
 // Website
+ Route::resource('/home', DashboardController::class);
