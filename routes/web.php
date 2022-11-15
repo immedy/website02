@@ -1,8 +1,10 @@
 <?php
 
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\ReferensiController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\WebsiteController;
+use App\Models\Referensi;
 
 /*
 |--------------------------------------------------------------------------
@@ -26,3 +28,4 @@ Route::get('/Informasi/LaporanKeluhan', [WebsiteController::class, 'LaporanKeluh
 
 // Website
  Route::resource('/home', DashboardController::class);
+ Route::resource('/referensi', ReferensiController::class);
