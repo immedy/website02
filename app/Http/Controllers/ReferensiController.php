@@ -16,7 +16,9 @@ class ReferensiController extends Controller
      */
     public function index()
     {
-        return view('Dashboard.Referensi');
+        return view('Dashboard.Referensi',[
+            'referensi' => Referensi::all()
+        ]);
     }
 
     /**
