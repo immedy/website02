@@ -14,6 +14,8 @@
     <link rel="stylesheet" href="{{ asset('dashboard/css/shared/iconly.css') }}">
     <link rel="stylesheet" href="{{ asset('dashboard/extensions/bootstrap-icons/font/bootstrap-icons.css') }}">
     <link rel="stylesheet" href="{{ asset('dashboard/extensions/choices.js/public/assets/styles/choices.css') }}">
+    <link rel="stylesheet" href="{{ asset('dashboard/extensions/quill/quill.snow.css') }}" />
+    <link rel="stylesheet" href="{{ asset('dashboard/extensions/quill/quill.bubble.css') }}" />
 </head>
 
 <body>
@@ -66,7 +68,7 @@
                     <ul class="menu">
                         <li class="sidebar-title">Dashboard</li>
                         <li class="sidebar-item {{ Request::is('/') ? 'active' : '' }}">
-                            <a href="" class='sidebar-link'>
+                            <a href="/home" class='sidebar-link'>
                                 <i class="bi bi-grid-fill"></i>
                                 <span>Dashboard</span>
                             </a>
@@ -116,10 +118,7 @@
                             </a>
                             <ul class="submenu ">
                                 <li class="submenu-item ">
-                                    <a href="">Pegawai</a>
-                                </li>
-                                <li class="submenu-item ">
-                                    <a href="">Pengguna</a>
+                                    <a href="/pengguna">Pengguna</a>
                                 </li>
                                 <li class="submenu-item ">
                                     <a href="/referensi">Referensi</a>
@@ -226,6 +225,9 @@
     <script src="{{ asset('dashboard/js/pages/simple-datatables.js') }}"></script>
     <script src="{{ asset('dashboard/extensions/choices.js/public/assets/scripts/choices.js') }}"></script>
     <script src="{{ asset('dashboard/js/pages/form-element-select.js') }}"></script>
+    <script src="assets/extensions/quill/quill.min.js"></script>
+  <script src="assets/js/pages/quill.js"></script>
+    
 
     <script>
         // Simple Datatable

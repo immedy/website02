@@ -74,7 +74,7 @@
     <section class="basic-choices">
         <div class="modal fade text-left" id="info" tabindex="-1" role="dialog" aria-labelledby="myModalLabel130"
             aria-hidden="true">
-            <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable" role="document">
+            <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
                 <div class="modal-content">
                     <form class="form form-vertical" action="/referensi" method="POST">
                         @csrf
@@ -94,13 +94,10 @@
                                             <label for="first-name-icon">Pilih Jenis Kategori</label>
                                             <div class="form-group">
                                                 <select class="choices form-select" name="jenis">
-                                                    <option value="1">Square</option>
-                                                    <option value="2">Rectangle</option>
-                                                    <option value="3">Rombo</option>
-                                                    <option value="4">Romboid</option>
-                                                    <option value="5">Trapeze</option>
-                                                    <option value="6">Triangle</option>
-                                                    <option value="7">Polygon</option>
+                                                    <option selected disabled value="">Silahkan Pilih</option>
+                                                    @foreach ($kategori as $p )
+                                                    <option value="{{ $p->id }}">{{ $p->kategori }}</option>    
+                                                    @endforeach                                    
                                                 </select>
                                             </div>
                                         </div>
@@ -109,7 +106,7 @@
                                         <div class="form-group has-icon-left">
                                             <label for="email-id-icon">Tambahkan Referensi </label>
                                             <div class="position-relative">
-                                                <input type="text" class="form-control" placeholder="Email"
+                                                <input type="text" class="form-control" placeholder="Tambahkan Referensi"
                                                     id="deskripsi" name="deskripsi">
                                                 <div class="form-control-icon">
                                                     <i class="bi bi-gear"></i>

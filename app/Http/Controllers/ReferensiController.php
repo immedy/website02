@@ -6,6 +6,7 @@ use App\Models\Referensi;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\StoreReferensiRequest;
 use App\Http\Requests\UpdateReferensiRequest;
+use App\Models\kategori;
 use RealRashid\SweetAlert\Facades\Alert;
 
 class ReferensiController extends Controller
@@ -18,7 +19,8 @@ class ReferensiController extends Controller
     public function index()
     {
         return view('Dashboard.Referensi',[
-            'referensi' => Referensi::orderBy('jenis','asc')->get()
+            'referensi' => Referensi::orderBy('jenis','asc')->get(),
+            'kategori' => kategori::all()
         ]);
     }
 

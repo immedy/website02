@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\ReferensiController;
+use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\WebsiteController;
 use App\Models\Referensi;
@@ -29,3 +30,4 @@ Route::get('/Informasi/LaporanKeluhan', [WebsiteController::class, 'LaporanKeluh
 // Dashboard
  Route::resource('/home', DashboardController::class);
  Route::resource('/referensi', ReferensiController::class);
+ Route::resource('/pengguna', UserController::class);

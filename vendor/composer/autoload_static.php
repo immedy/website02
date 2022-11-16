@@ -531,6 +531,7 @@ class ComposerStaticInit8cd73adf4530bb38cc41cdf079b6f0f4
         'App\\Http\\Requests\\UpdateReferensiRequest' => __DIR__ . '/../..' . '/app/Http/Requests/UpdateReferensiRequest.php',
         'App\\Models\\Referensi' => __DIR__ . '/../..' . '/app/Models/Referensi.php',
         'App\\Models\\User' => __DIR__ . '/../..' . '/app/Models/User.php',
+        'App\\Models\\kategori' => __DIR__ . '/../..' . '/app/Models/kategori.php',
         'App\\Policies\\ReferensiPolicy' => __DIR__ . '/../..' . '/app/Policies/ReferensiPolicy.php',
         'App\\Providers\\AppServiceProvider' => __DIR__ . '/../..' . '/app/Providers/AppServiceProvider.php',
         'App\\Providers\\AuthServiceProvider' => __DIR__ . '/../..' . '/app/Providers/AuthServiceProvider.php',

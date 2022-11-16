@@ -26,6 +26,7 @@ return array(
     'App\\Http\\Requests\\UpdateReferensiRequest' => $baseDir . '/app/Http/Requests/UpdateReferensiRequest.php',
     'App\\Models\\Referensi' => $baseDir . '/app/Models/Referensi.php',
     'App\\Models\\User' => $baseDir . '/app/Models/User.php',
+    'App\\Models\\kategori' => $baseDir . '/app/Models/kategori.php',
     'App\\Policies\\ReferensiPolicy' => $baseDir . '/app/Policies/ReferensiPolicy.php',
     'App\\Providers\\AppServiceProvider' => $baseDir . '/app/Providers/AppServiceProvider.php',
     'App\\Providers\\AuthServiceProvider' => $baseDir . '/app/Providers/AuthServiceProvider.php',

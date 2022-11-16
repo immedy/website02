@@ -2,10 +2,13 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Controllers\Controller;
+use App\Models\User;
+use App\Models\Referensi;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
+use RealRashid\SweetAlert\Facades\Alert;
 
-class DashboardController extends Controller
+class UserController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,7 +17,10 @@ class DashboardController extends Controller
      */
     public function index()
     {
-        return view('Dashboard.home');
+        return view('Dashboard.Pengguna',[
+            'user' => User::all(),
+            'referensi' => Referensi::where('jenis','=','1')->get()
+        ]);
     }
 
     /**
@@ -24,7 +30,7 @@ class DashboardController extends Controller
      */
     public function create()
     {
-        return view('Dashboard.detail.createberita');
+        //
     }
 
     /**
@@ -35,7 +41,20 @@ class DashboardController extends Controller
      */
     public function store(Request $request)
     {
-        dd($request);
+        $ValidasiPengguna = $request->validate([
+            'nip' => 'required',
+            'nama' => 'required',
+            'username' => 'required',
+            'password' => 'required',
+            'referensi_id' => 'required'
+        ]);
+        $ValidasiPengguna ['password'] = bcrypt($ValidasiPengguna['password']);
+        User::create($ValidasiPengguna);
+
+        if ($ValidasiPengguna) {
+            Alert::toast('Pengguna Berhasil Tersimpan');
+            return back();
+        }
     }
 
     /**
