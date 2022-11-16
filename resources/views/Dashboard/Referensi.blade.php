@@ -1,8 +1,8 @@
 @extends('Layout.DashboardLayout')
 @section('DashboardLayout')
     <div class="card">
-            <div class="card-header">
-                <h5>Referensi</h5>
+        <div class="card-header">
+            <h5>Referensi</h5>
             <div class="modal-info me-1 mb-1 d-inline-block d-flex flex-row-reverse">
                 <!-- Button trigger for info theme modal -->
                 <button type="button" class="btn btn-outline-info" data-bs-toggle="modal" data-bs-target="#info">
@@ -11,7 +11,7 @@
                 <!--info theme Modal -->
             </div>
         </div>
-        
+
         <div class="card-body">
             <div class="table-responsive">
                 <table class="table table-hover table-lg">
@@ -20,29 +20,48 @@
                             <th>No</th>
                             <th>Jenis</th>
                             <th>Deskripsi</th>
+                            <Th>Status</Th>
                             <th>Aksi</th>
                         </tr>
                     </thead>
                     <tbody>
                         @foreach ($referensi as $p)
                             <tr>
-                                <td class="col-3">
+                                <td class="col-1">
                                     <div class="d-flex align-items-center">
-                                        <div class="avatar avatar-md">
-                                            <img src="assets/images/faces/5.jpg">
-                                        </div>
                                         <p class="font-bold ms-3 mb-0">{{ $loop->iteration }}</p>
                                     </div>
                                 </td>
-                                <td class="col-2">
+                                <td class="col-1">
                                     <p class=" mb-0">{{ $p->jenis }}</p>
                                 </td>
-                                <td class="col-auto">
+                                <td class="col-10">
                                     <p class=" mb-0">{{ $p->deskripsi }}</p>
+                                </td>
+                                <td class="col-auto">
+                                    @if ($p->status = 1)
+                                    <div class="form-check">
+                                        <div class="custom-control custom-checkbox">
+                                            <input type="checkbox"
+                                                class="form-check-input form-check-success form-check-glow" checked
+                                                name="customCheck" id="customColorCheck3">
+                                        </div>
+                                    </div>
+                                    @else
+                                    <div class="form-check">
+                                        <div class="custom-control custom-checkbox">
+                                            <input type="checkbox"
+                                                class="form-check-input form-check-danger form-check-glow" checked
+                                                name="customCheck" id="customColorCheck4">                            
+                                        </div>
+                                    </div>
+                                    @endif
+                                    
                                 </td>
                                 <td class="col-auto">
                                     <p class=" mb-0">aksi</p>
                                 </td>
+                                
                             </tr>
                         @endforeach
                     </tbody>
@@ -50,37 +69,70 @@
             </div>
         </div>
     </div>
-@endsection
 
-<div class="modal fade text-left" id="info" tabindex="-1" role="dialog" aria-labelledby="myModalLabel130"
-    aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable" role="document">
-        <div class="modal-content">
-            <div class="modal-header bg-info">
-                <h5 class="modal-title white" id="myModalLabel130">
-                    Info Modal
-                </h5>
-                <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
-                    <i data-feather="x"></i>
-                </button>
-            </div>
-            <div class="modal-body">
-                Tart lemon drops macaroon oat cake chocolate
-                toffee chocolate bar icing. Pudding jelly
-                beans carrot cake pastry gummies cheesecake
-                lollipop. I love cookie lollipop cake I love
-                sweet gummi bears cupcake dessert.
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-light-secondary" data-bs-dismiss="modal">
-                    <i class="bx bx-x d-block d-sm-none"></i>
-                    <span class="d-none d-sm-block">Close</span>
-                </button>
-                <button type="button" class="btn btn-info ml-1" data-bs-dismiss="modal">
-                    <i class="bx bx-check d-block d-sm-none"></i>
-                    <span class="d-none d-sm-block">Accept</span>
-                </button>
+    {{-- Awal Modal --}}
+    <section class="basic-choices">
+        <div class="modal fade text-left" id="info" tabindex="-1" role="dialog" aria-labelledby="myModalLabel130"
+            aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable" role="document">
+                <div class="modal-content">
+                    <form class="form form-vertical" action="/referensi" method="POST">
+                        @csrf
+                        <div class="modal-header bg-info">
+                            <h5 class="modal-title white" id="myModalLabel130">
+                                Tambah Referensi
+                            </h5>
+                            <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+                                <i data-feather="x"></i>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="form-body">
+                                <div class="row">
+                                    <div class="col-12">
+                                        <div class="form-group has-icon-left">
+                                            <label for="first-name-icon">Pilih Jenis Kategori</label>
+                                            <div class="form-group">
+                                                <select class="choices form-select" name="jenis">
+                                                    <option value="1">Square</option>
+                                                    <option value="2">Rectangle</option>
+                                                    <option value="3">Rombo</option>
+                                                    <option value="4">Romboid</option>
+                                                    <option value="5">Trapeze</option>
+                                                    <option value="6">Triangle</option>
+                                                    <option value="7">Polygon</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-12">
+                                        <div class="form-group has-icon-left">
+                                            <label for="email-id-icon">Tambahkan Referensi </label>
+                                            <div class="position-relative">
+                                                <input type="text" class="form-control" placeholder="Email"
+                                                    id="deskripsi" name="deskripsi">
+                                                <div class="form-control-icon">
+                                                    <i class="bi bi-gear"></i>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-light-secondary">
+                                <i class="bx bx-x d-block d-sm-none"></i>
+                                <span class="d-none d-sm-block">Reset</span>
+                            </button>
+                            <button type="submit" class="btn btn-info ml-1">
+                                <span class="d-none d-sm-block">Simpan</span>
+                            </button>
+                        </div>
+                    </form>
+                </div>
             </div>
         </div>
-    </div>
-</div>
+    </section>
+    {{-- Akhir Modal --}}
+@endsection

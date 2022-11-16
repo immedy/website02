@@ -26,6 +26,6 @@ Route::get('/Informasi/TataTertib', [WebsiteController::class, 'TataTertib']);
 Route::get('/Informasi/LaporanKeluhan', [WebsiteController::class, 'LaporanKeluhan']);
 
 
-// Website
+// Dashboard
  Route::resource('/home', DashboardController::class);
  Route::resource('/referensi', ReferensiController::class);

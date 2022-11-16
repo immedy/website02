@@ -6,6 +6,7 @@ use App\Models\Referensi;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\StoreReferensiRequest;
 use App\Http\Requests\UpdateReferensiRequest;
+use RealRashid\SweetAlert\Facades\Alert;
 
 class ReferensiController extends Controller
 {
@@ -17,7 +18,7 @@ class ReferensiController extends Controller
     public function index()
     {
         return view('Dashboard.Referensi',[
-            'referensi' => Referensi::all()
+            'referensi' => Referensi::orderBy('jenis','asc')->get()
         ]);
     }
 
@@ -39,12 +40,21 @@ class ReferensiController extends Controller
      */
     public function store(StoreReferensiRequest $request)
     {
-        //
+        $ValidasiReferensi = $request->validate([
+            'jenis' => 'required',
+            'deskripsi' => 'required'
+        ]);
+        $ValidasiReferensi ['status'] =1;
+        Referensi::create($ValidasiReferensi);
+        if($ValidasiReferensi){
+            Alert::toast('Kategori Berhasil Ditambahkan');
+            return back();
+        }
     }
 
     /**
      * Display the specified resource.
-     *
+    
      * @param  \App\Models\Referensi  $referensi
      * @return \Illuminate\Http\Response
      */
