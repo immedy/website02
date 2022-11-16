@@ -225,9 +225,10 @@
     <script src="{{ asset('dashboard/js/pages/simple-datatables.js') }}"></script>
     <script src="{{ asset('dashboard/extensions/choices.js/public/assets/scripts/choices.js') }}"></script>
     <script src="{{ asset('dashboard/js/pages/form-element-select.js') }}"></script>
-    <script src="assets/extensions/quill/quill.min.js"></script>
-  <script src="assets/js/pages/quill.js"></script>
-    
+    <script src="{{ asset('dashboard/extensions/quill/quill.min.js') }}"></script>
+    <script src="{{ asset('dashboard/js/pages/quill.js') }}"></script>
+    <script src="https://cdn.ckeditor.com/ckeditor5/34.2.0/classic/ckeditor.js"></script>
+    <script src="{{ asset('dashboard/js/pages/ckeditor.js') }}"></script>
 
     <script>
         // Simple Datatable
