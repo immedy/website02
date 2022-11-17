@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
+use App\Models\Referensi;
 use Illuminate\Http\Request;
 
 class DashboardController extends Controller
@@ -24,7 +25,9 @@ class DashboardController extends Controller
      */
     public function create()
     {
-        return view('Dashboard.detail.createberita');
+        return view('Dashboard.detail.createberita',[
+            'kategori' => Referensi::where('jenis','=','4')->get()
+        ]);
     }
 
     /**
@@ -35,7 +38,9 @@ class DashboardController extends Controller
      */
     public function store(Request $request)
     {
-        dd($request);
+        $ValidasiInstalasi = $request->validate([
+            ''
+        ]);
     }
 
     /**

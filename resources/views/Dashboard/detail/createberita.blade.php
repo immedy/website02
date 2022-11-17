@@ -1,230 +1,86 @@
 @extends('Layout.DashboardLayout')
 @section('DashboardLayout')
-    <form action="/home" method="post">
+    <form action="/home" method="post" enctype="multipart/form-data">
         @csrf
         <section id="multiple-column-form">
             <div class="row match-height">
-              <div class="col-12">
-                <div class="card">
-                  <div class="card-header">
-                    <h4 class="card-title">Multiple Column</h4>
-                  </div>
-                  <div class="card-content">
-                    <div class="card-body">
-                      <form class="form" data-parsley-validate>
-                        <div class="row">
-                          <div class="col-md-6 col-12">
-                            <div class="form-group mandatory">
-                              <label for="first-name-column" class="form-label"
-                                >First Name</label
-                              >
-                              <input
-                                type="text"
-                                id="first-name-column"
-                                class="form-control"
-                                placeholder="First Name"
-                                name="fname-column"
-                                data-parsley-required="true"
-                              />
-                            </div>
-                          </div>
-                          <div class="col-md-6 col-12">
-                            <div class="form-group">
-                              <label for="last-name-column" class="form-label"
-                                >Last Name</label
-                              >
-                              <input
-                                type="text"
-                                id="last-name-column"
-                                class="form-control"
-                                placeholder="Last Name"
-                                name="lname-column"
-                                data-parsley-required="true"
-                              />
-                            </div>
-                          </div>
-                          <div class="col-md-6 col-12">
-                            <div class="form-group">
-                              <label for="city-column" class="form-label"
-                                >City</label
-                              >
-                              <input
-                                type="text"
-                                id="city-column"
-                                class="form-control"
-                                placeholder="Custom validation. Value has to be Jakarta."
-                                name="city-column"
-                                data-parsley-restricted-city="Jakarta"
-                                data-parsley-required="true"
-                              />
-                            </div>
-                          </div>
-                          <div class="col-md-6 col-12">
-                            <div class="form-group">
-                              <label for="country-floating" class="form-label"
-                                >Country</label
-                              >
-                              <input
-                                type="text"
-                                id="country-floating"
-                                class="form-control"
-                                name="country-floating"
-                                placeholder="Country"
-                                data-parsley-required="true"
-                              />
-                            </div>
-                          </div>
-                          <div class="col-md-6 col-12">
-                            <div class="form-group">
-                              <label for="company-column" class="form-label"
-                                >Company</label
-                              >
-                              <input
-                                type="text"
-                                id="company-column"
-                                class="form-control"
-                                name="company-column"
-                                placeholder="Company"
-                                data-parsley-required="true"
-                              />
-                            </div>
-                          </div>
-                          <div class="col-md-6 col-12">
-                            <div class="form-group mandatory">
-                              <label for="email-id-column" class="form-label"
-                                >Email</label
-                              >
-                              <input
-                                type="email"
-                                id="email-id-column"
-                                class="form-control"
-                                name="email-id-column"
-                                placeholder="Email"
-                                data-parsley-required="true"
-                              />
-                            </div>
-                          </div>
-                          <div class="col-12">
-                            <div class="form-group">
-                              <div class="form-check mandatory">
-                                <input
-                                  type="checkbox"
-                                  id="checkbox5"
-                                  class="form-check-input"
-                                  checked
-                                  data-parsley-required="true"
-                                  data-parsley-error-message="You have to accept our terms and conditions to proceed."
-                                />
-                                <label
-                                  for="checkbox5"
-                                  class="form-check-label form-label"
-                                  >I accept these terms and conditions.</label
-                                >
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                        <div class="row">
-                          <div class="col-12">
-                            <div class="form-group mandatory">
-                              <fieldset>
-                                <label class="form-label">
-                                  Favourite Colour
-                                </label>
-                                <div class="form-check">
-                                  <input
-                                    class="form-check-input"
-                                    type="radio"
-                                    name="flexRadioDefault"
-                                    id="flexRadioDefault1"
-                                    data-parsley-required="true"
-                                  />
-                                  <label
-                                    class="form-check-label form-label"
-                                    for="flexRadioDefault1"
-                                  >
-                                    Red
-                                  </label>
+                {{-- Insert Nama Instalasi dan Unit --}}
+                <div class="col-6">
+                    <div class="card">
+                        <div class="card-content">
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="col">
+                                        <div class="form-group mandatory">
+                                            <label for="first-name-column" class="form-label">Pilih Instalasi</label>
+                                            <select class="choices form-select" name="jenis" required>
+                                                <option selected disabled value="">Silahkan Pilih</option>
+                                                @foreach ($kategori as $p)
+                                                    <option value="{{ $p->id }}">{{ $p->deskripsi }}</option>
+                                                @endforeach
+                                            </select>
+                                        </div>
+                                    </div>
                                 </div>
-                                <div class="form-check">
-                                  <input
-                                    class="form-check-input"
-                                    type="radio"
-                                    name="flexRadioDefault"
-                                    id="flexRadioDefault2"
-                                  />
-                                  <label
-                                    class="form-check-label form-label"
-                                    for="flexRadioDefault2"
-                                  >
-                                    Blue
-                                  </label>
+                                <div class="row">
+                                    <div class="col">
+                                        <div class="form-group">
+                                            <label for="last-name-column" class="form-label">Tambahkan Unit</label>
+                                            <input type="text" id="last-name-column" class="form-control"
+                                                placeholder="Tambahkan Nama Unit" name="unit"
+                                                required />
+                                        </div>
+                                    </div>
                                 </div>
-                              </fieldset>
                             </div>
-                          </div>
                         </div>
-                        <div class="row">
-                          <div class="col-12 d-flex justify-content-end">
-                            <button
-                              type="submit"
-                              class="btn btn-primary me-1 mb-1"
-                            >
-                              Submit
-                            </button>
-                            <button
-                              type="reset"
-                              class="btn btn-light-secondary me-1 mb-1"
-                            >
-                              Reset
-                            </button>
-                          </div>
-                        </div>
-                      </form>
                     </div>
-                  </div>
                 </div>
-              </div>
+                {{-- Insert Nama Instalasi dan Unit --}}
+                {{-- upload Gambar --}}
+                <div class="col-6">
+                    <div class="card">
+                        <div class="card-content">
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="col">
+                                        <div class="form-control">
+                                            <label for="gambar" class="form-label">Tambahkan Foto</label>
+                                            <input type="file" id="gambar" class="form-control"
+                                                name="gambar" / required>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {{-- upload Gambar --}}
             </div>
-          </section>
+        </section>
         <div class="card">
             <section class="section">
                 <div class="row">
                     <div class="col-12">
                         <div class="card">
-                            <div class="card-header">
-                                <h4 class="card-title">Classic Editor</h4>
-                            </div>
                             <div class="card-body">
-                                {{-- <div class="col-sm">
-                                    <label for="validationCustom03" class="form-label">City</label>
-                                    <input type="text" class="form-control" id="validationCustom03" required>
-                                    <div class="invalid-feedback">
-                                        Please provide a valid city.
-                                    </div>
-                                </div>
-                                    <label for="validationCustom03" class="form-label">City</label>
-                                    <input type="text" class="form-control" id="validationCustom03" required>
-                                    <div class="invalid-feedback">
-                                        Please provide a valid city.
-                                    </div>
-                                </div> --}}
-                                <textarea name="editor" id="editor" cols="30" rows="1000" placeholder="Tulis Artikel Di sini"><div id="editor">
+                                <textarea name="editor" id="editor" cols="30" rows="1000" required placeholder="Tulis Artikel Di sini"><div id="editor">
                                 </div></textarea>
-
                             </div>
                         </div>
                     </div>
                 </div>
+                <div class="row">
+                  <div class="col-12 d-flex justify-content-end">
+                    <button type="reset" class="btn btn-danger me-3   mb-3">
+                      reset
+                    </button>
+                    <button type="submit" class="btn btn-light-success me-3 mb-3">
+                      Simpan
+                    </button>
+                  </div>
+                </div>
             </section>
         </div>
-        <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">
-            Tutup
-        </button>
-        <button type="submit" class="btn btn-primary">Simpan</button>
     </form>
-
-
-    
 @endsection
-

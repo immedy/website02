@@ -16,6 +16,8 @@
     <link rel="stylesheet" href="{{ asset('dashboard/extensions/choices.js/public/assets/styles/choices.css') }}">
     <link rel="stylesheet" href="{{ asset('dashboard/extensions/quill/quill.snow.css') }}" />
     <link rel="stylesheet" href="{{ asset('dashboard/extensions/quill/quill.bubble.css') }}" />
+
+
 </head>
 
 <body>
@@ -229,7 +231,6 @@
     <script src="{{ asset('dashboard/js/pages/quill.js') }}"></script>
     <script src="https://cdn.ckeditor.com/ckeditor5/34.2.0/classic/ckeditor.js"></script>
     <script src="{{ asset('dashboard/js/pages/ckeditor.js') }}"></script>
-
     <script>
         // Simple Datatable
         let table1 = document.querySelector('#table1');
