@@ -39,8 +39,13 @@ class DashboardController extends Controller
     public function store(Request $request)
     {
         $ValidasiInstalasi = $request->validate([
-            ''
+            'referensi_id' => 'required',
+            'unit'         => 'required',
+            'gambar'       => 'required|image|mimes:jpeg,png,jpg|file|max:200',
+            'textarea'     => 'required'
         ]);
+        $ValidasiInstalasi ['status'] = 1;
+        
     }
 
     /**
