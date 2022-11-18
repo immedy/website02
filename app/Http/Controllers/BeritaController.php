@@ -2,11 +2,14 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Controllers\Controller;
+use App\Models\berita;
 use App\Models\Referensi;
+use Illuminate\Support\Str;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
+use RealRashid\SweetAlert\Facades\Alert;
 
-class DashboardController extends Controller
+class BeritaController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,7 +18,10 @@ class DashboardController extends Controller
      */
     public function index()
     {
-        return view('Dashboard.home');
+        return view('Dashboard.Berita',[
+            'referensi' => Referensi::where('jenis','=','6')->get(),
+            'berita' => berita::all()
+        ]);
     }
 
     /**
@@ -25,9 +31,7 @@ class DashboardController extends Controller
      */
     public function create()
     {
-        return view('Dashboard.detail.createinstalasi',[
-            'kategori' => Referensi::where('jenis','=','4')->get()
-        ]);
+        //
     }
 
     /**
@@ -38,9 +42,21 @@ class DashboardController extends Controller
      */
     public function store(Request $request)
     {
-        $ValidasiInstalasi = $request->validate([
-            ''
+        $ValidasiBerita = $request->validate([
+            'referensi_id'  => 'required',
+            'berita'        => 'required',
+            'judul'         => 'required',
+            'gambar'        => 'required|image|mimes:jpeg,png,jpg|file|max:200'
         ]);
+        $ValidasiBerita ['user_id'] = 1;
+        $ValidasiBerita ['status'] = 1;
+        $ValidasiBerita['exeprt'] = Str::limit(strip_tags($request->berita, 65));
+        $ValidasiBerita['gambar'] = $request->file('gambar')->store('FotoBerita');
+        berita::create($ValidasiBerita);
+        if($ValidasiBerita){
+            Alert::toast('Kategori Berhasil Ditambahkan');
+            return back();
+        }
     }
 
     /**

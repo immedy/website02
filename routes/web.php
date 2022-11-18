@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\BeritaController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\ReferensiController;
 use App\Http\Controllers\UserController;
@@ -31,3 +32,4 @@ Route::get('/Informasi/LaporanKeluhan', [WebsiteController::class, 'LaporanKeluh
  Route::resource('/home', DashboardController::class);
  Route::resource('/referensi', ReferensiController::class);
  Route::resource('/pengguna', UserController::class);
+ Route::resource('/berita', BeritaController::class);

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\berita;
 use Illuminate\Http\Request;
 use PhpParser\Node\Stmt\Return_;
 
@@ -19,7 +20,9 @@ class WebsiteController extends Controller
 
     public function BeritaKesehatan()
     {
-        return view('LandingPage.Informasi.BeritaKesehatan');
+        return view('LandingPage.Informasi.BeritaKesehatan', [
+            'berita' => berita::where('status','=','1')->orderBy('created_at','desc')->get()
+        ]);
     }
 
     public function JadwaLDokter()
