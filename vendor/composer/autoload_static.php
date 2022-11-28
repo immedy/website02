@@ -534,6 +534,7 @@ class ComposerStaticInit8cd73adf4530bb38cc41cdf079b6f0f4
         'App\\Models\\Referensi' => __DIR__ . '/../..' . '/app/Models/Referensi.php',
         'App\\Models\\User' => __DIR__ . '/../..' . '/app/Models/User.php',
         'App\\Models\\berita' => __DIR__ . '/../..' . '/app/Models/berita.php',
+        'App\\Models\\dokter' => __DIR__ . '/../..' . '/app/Models/dokter.php',
         'App\\Models\\instalasi' => __DIR__ . '/../..' . '/app/Models/instalasi.php',
         'App\\Models\\kategori' => __DIR__ . '/../..' . '/app/Models/kategori.php',
         'App\\Policies\\ReferensiPolicy' => __DIR__ . '/../..' . '/app/Policies/ReferensiPolicy.php',

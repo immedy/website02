@@ -2,8 +2,7 @@
 @section('DashboardLayout')
     <div class="card">
         <div class="card-header">
-            <h5>Referensi</h5>
-            <div class="modal-info me-1 mb-1 d-inline-block d-flex flex-row-reverse">
+            <div class="modal-info me-1 d-inline-block d-flex flex-row-reverse">
                 <!-- Button trigger for info theme modal -->
                 <button type="button" class="btn btn-outline-info" data-bs-toggle="modal" data-bs-target="#info">
                     <i class="bi bi-plus-square-fill"></i>

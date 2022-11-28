@@ -2,13 +2,13 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\instalasi;
+use App\Http\Controllers\Controller;
+use App\Models\dokter;
 use App\Models\Referensi;
 use Illuminate\Http\Request;
-use App\Http\Controllers\Controller;
 use RealRashid\SweetAlert\Facades\Alert;
 
-class DashboardController extends Controller
+class DokterController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -17,8 +17,10 @@ class DashboardController extends Controller
      */
     public function index()
     {
-        return view('Dashboard.home',[
-            'dashboard' => instalasi::all()
+        return view('Dashboard.Dokter',[
+            'dokter' => dokter::orderBy('created_at','desc')->get(),
+            'smf' => Referensi::where('jenis','3')->get(),
+            'poliklinik' => Referensi::where('jenis','2')->get()
         ]);
     }
 
@@ -29,9 +31,7 @@ class DashboardController extends Controller
      */
     public function create()
     {
-        return view('Dashboard.detail.createinstalasi',[
-            'kategori' => Referensi::where('jenis','=','4')->get()
-        ]);
+        //
     }
 
     /**
@@ -42,21 +42,25 @@ class DashboardController extends Controller
      */
     public function store(Request $request)
     {
-        $ValidasiInstalasi = $request->validate([
-            'referensi_id' => 'required',
-            'unit'         => 'required',
-            'gambar'       => 'required|image|mimes:jpeg,png,jpg|file|max:200',
-            'textarea'     => 'required'
+        $ValidasiDokter = $request->validate([
+            'smf' => 'required',
+            'poliklinik' => 'required',
+            'nama' => 'required',
+            'gambar'        => 'required|image|mimes:jpeg,png,jpg|file|max:200',
+            'senin' =>  'nullable',
+            'selasa' =>  'nullable',
+            'rabu' =>  'nullable',
+            'kamis' =>  'nullable',
+            'jumat' =>  'nullable',
         ]);
-        $ValidasiInstalasi ['status'] = 1;
-        $ValidasiInstalasi ['user_id'] = 1;
-        $ValidasiInstalasi['gambar'] = $request->file('gambar')->store('FotoInstalasi');
-        instalasi::create($ValidasiInstalasi);
-        if($ValidasiInstalasi){
-            Alert::toast('Berhasil Ditambahkan');
-            return redirect('/home');
+        $ValidasiDokter['user_id'] = 1;
+        $ValidasiDokter['status'] = 1;
+        $ValidasiDokter['gambar'] = $request->file('gambar')->store('FotoDokter');
+        dokter::create($ValidasiDokter);
+        if($ValidasiDokter){
+            Alert::toast('Dokter Berhasil Ditambahkan');
+            return back();
         }
-        
     }
 
     /**

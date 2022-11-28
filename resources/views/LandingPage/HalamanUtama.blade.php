@@ -1,11 +1,10 @@
 @extends('Layout.LandingPageLayout')
 @section('LandigPage')
- 
     <!-- About Start -->
     <div class="container-xxl py-5">
         <div class="container">
             <div class="row g-5">
-                
+
                 <div class="col-lg-6 wow fadeIn" data-wow-delay="0.5s">
                     <p class="fw-medium text-uppercase text-primary mb-2">Tentang Kami</p>
                     <h1 class="display-5 mb-4">Rumah Sakit Umum Daerah Dayaku Raja Kota Bangun</h1>
@@ -23,10 +22,10 @@
                 <div class="col-lg-6">
                     <div class="row h-100">
                         <div class="col-6 align-self-start wow fadeInUp" data-wow-delay="0.1s">
-                            <img class="img-fluid" src="img/about-1.jpg">
+                            <img class="img-fluid" src="{{ asset('img/about-1.jpg') }}">
                         </div>
                         <div class="col-6 align-self-end wow fadeInDown" data-wow-delay="0.1s">
-                            <img class="img-fluid" src="img/about-2.jpg">
+                            <img class="img-fluid" src="{{ asset('img/about-2.jpg') }}">
                         </div>
                     </div>
                 </div>
@@ -43,7 +42,7 @@
             <div class="row g-5 align-items-center">
                 <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
                     <div class="position-relative me-lg-4">
-                        <img class="img-fluid w-100" src="img/feature.jpg" alt="">
+                        <img class="img-fluid w-100" src="{{ asset('img/feature.jpg') }}" alt="">
                         <span
                             class="position-absolute top-50 start-100 translate-middle bg-white rounded-circle d-none d-lg-block"
                             style="width: 120px; height: 120px;"></span>
@@ -57,7 +56,7 @@
                     <p class="fw-medium text-uppercase text-primary mb-2">Kenapa Harus Ke Dayaku Raja</p>
                     <h1 class=" ">Sesuai Motto Rumah Sakit </h1>
                     <h1 class=" mb-4">MELAYANI SEPENUH DAYAKU</h1>
-                    
+
                     <div class="row gy-4">
                         <div class="col-12">
                             <div class="d-flex">
@@ -143,119 +142,119 @@
                 <p class="fw-medium text-uppercase text-primary mb-2">Informasi Seputar Rumah Sakit Dan Kesehatan</p>
             </div>
             <div class="row gy-5 gx-4">
-                <div class="col-md-6 col-lg-4 wow fadeInUp" data-wow-delay="0.1s">
-                    <div class="service-item">
-                        <img class="img-fluid" src="img/service-1.jpg" alt="">
-                        <div class="service-img">
-                            <img class="img-fluid" src="img/service-1.jpg" alt="">
-                        </div>
-                        <div class="service-detail">
-                            <div class="service-title">
-                                <hr class="w-25">
-                                <h3 class="mb-0">Civil & Gas Engineering</h3>
-                                <hr class="w-25">
+                @foreach ($berita as $p)
+                    <div class="col-md-4 wow slideInUp" data-wow-delay="0.1s">
+                        <div class="blog-item bg-light rounded overflow-hidden">
+                            <div class="blog-img position-relative overflow-hidden">
+                                <img class="img-fluid" src="{{ asset('storage/' . $p->gambar) }}" alt="">
+                                <a class="position-absolute top-0 start-0 bg-primary text-white rounded-end mt-5 py-2 px-4"
+                                    href="">{{ $p->referensi->deskripsi }}</a>
                             </div>
-                            <div class="service-text">
-                                <p class="text-white mb-0">Erat ipsum justo amet duo et elitr dolor, est duo duo eos
-                                    lorem sed diam stet diam sed stet.</p>
+                            <div class="p-4">
+                                <div class="d-flex mb-3">
+                                    <small class="me-3"><i
+                                            class="far fa-user text-primary me-2"></i>{{ $p->user->nama }}</small>
+                                    <small><i
+                                            class="far fa-calendar-alt text-primary me-2"></i>{{ $p->created_at->diffForHumans() }}</small>
+                                </div>
+                                <h4 class="mb-3">{{ $p->judul }}</h4>
+                                <p>{{ $p->exeprt }}</p>
+                                <a class="text-uppercase"
+                                    href="/Informasi/BeritaKesehatan/{{ Crypt::encryptString($p->id) }}">Baca Selengkapnya
+                                    <i class="bi bi-arrow-right"></i></a>
                             </div>
                         </div>
-                        <a class="btn btn-light" href="">Read More</a>
                     </div>
-                </div>
-                <div class="col-md-6 col-lg-4 wow fadeInUp" data-wow-delay="0.3s">
-                    <div class="service-item">
-                        <img class="img-fluid" src="img/service-2.jpg" alt="">
-                        <div class="service-img">
-                            <img class="img-fluid" src="img/service-2.jpg" alt="">
-                        </div>
-                        <div class="service-detail">
-                            <div class="service-title">
-                                <hr class="w-25">
-                                <h3 class="mb-0">Power & Energy Engineering</h3>
-                                <hr class="w-25">
-                            </div>
-                            <div class="service-text">
-                                <p class="text-white mb-0">Erat ipsum justo amet duo et elitr dolor, est duo duo eos
-                                    lorem sed diam stet diam sed stet.</p>
-                            </div>
-                        </div>
-                        <a class="btn btn-light" href="">Read More</a>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-4 wow fadeInUp" data-wow-delay="0.5s">
-                    <div class="service-item">
-                        <img class="img-fluid" src="img/service-3.jpg" alt="">
-                        <div class="service-img">
-                            <img class="img-fluid" src="img/service-3.jpg" alt="">
-                        </div>
-                        <div class="service-detail">
-                            <div class="service-title">
-                                <hr class="w-25">
-                                <h3 class="mb-0">Plumbing & Water Treatment</h3>
-                                <hr class="w-25">
-                            </div>
-                            <div class="service-text">
-                                <p class="text-white mb-0">Erat ipsum justo amet duo et elitr dolor, est duo duo eos
-                                    lorem sed diam stet diam sed stet.</p>
-                            </div>
-                        </div>
-                        <a class="btn btn-light" href="">Read More</a>
-                    </div>
-                </div>
+                @endforeach
             </div>
         </div>
     </div>
     <!-- Service End -->
 
+    <!-- Laporan Start -->
+    {{-- <div class="container-xxl py-5">
+        <div class="container">
+            <div class="row g-5">
+                <div class="col-lg-12 wow fadeInUp" data-wow-delay="0.1s">
+                    <div class="row g-3">
+                        <div class="col-sm-3 wow fadeIn" data-wow-delay="0.1s">
+                            <div class="bg-light rounded h-100 p-3">
+                                <div
+                                    class="bg-white d-flex flex-column justify-content-center text-center rounded h-100 py-4 px-3">
+                                    <a href="/">
+                                        <img class="align-self-center mb-3" src="{{ asset('icon/icon-06-primary.png') }}"
+                                            alt="" />
+                                        <h5 class="mb-0">Laporan</h5>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-3 fadeIn" data-wow-delay="0.2s">
+                            <div class="bg-light rounded h-100 p-3">
+                                <div
+                                    class="bg-white d-flex flex-column justify-content-center text-center rounded py-4 px-3">
+                                    <a href="/">
+                                        <img class="align-self-center mb-3"
+                                            src="{{ asset('icon/icon-03-primary.png') }}" />
+                                        <h5 class="mb-0">Laporan</h5>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-3 wow fadeIn" data-wow-delay="0.3s">
+                            <div class="bg-light rounded h-100 p-3">
+                                <div
+                                    class="bg-white d-flex flex-column justify-content-center text-center rounded py-4 px-3">
+                                    <a href="/">
+                                        <img class="align-self-center mb-3" src="{{ asset('icon/icon-04-primary.png') }}"
+                                            alt="" />
+                                        <h5 class="mb-0">Laporan</h5>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-3 wow fadeIn" data-wow-delay="0.4s">
+                            <div class="bg-light rounded h-100 p-3">
+                                <div
+                                    class="bg-white d-flex flex-column justify-content-center text-center rounded h-100 py-4 px-3">
+                                    <a href="/">
+                                        <img class="align-self-center mb-3" src="{{ asset('icon/checklist.png') }}"
+                                            alt="" />
+                                        <h5 class="mb-0">Laporan</h5>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div> --}}
+    <!-- Laporan End -->
 
-    <!-- Project Start -->
+
+    <!-- dokter Start -->
     <div class="container-fluid bg-dark pt-5 my-5 px-0">
         <div class="text-center mx-auto wow fadeIn" data-wow-delay="0.1s" style="max-width: 600px;">
             <h1 class="fw-medium text-uppercase text-white mb-2">Dokter RSUD DAYAKU RAJA</h1>
         </div>
         <div class="owl-carousel project-carousel wow fadeIn" data-wow-delay="0.1s">
-            <a class="project-item" href="">
-                <img class="img-fluid" src="img/project-1.jpg" alt="">
-                <div class="project-title">
-                    <h5 class="text-primary mb-0">Auto Engineering</h5>
-                </div>
-            </a>
-            <a class="project-item" href="">
-                <img class="img-fluid" src="img/project-2.jpg" alt="">
-                <div class="project-title">
-                    <h5 class="text-primary mb-0">Civil Engineering</h5>
-                </div>
-            </a>
-            <a class="project-item" href="">
-                <img class="img-fluid" src="img/project-3.jpg" alt="">
-                <div class="project-title">
-                    <h5 class="text-primary mb-0">Gas Engineering</h5>
-                </div>
-            </a>
-            <a class="project-item" href="">
-                <img class="img-fluid" src="img/project-4.jpg" alt="">
-                <div class="project-title">
-                    <h5 class="text-primary mb-0">Power Engineering</h5>
-                </div>
-            </a>
-            <a class="project-item" href="">
-                <img class="img-fluid" src="img/project-5.jpg" alt="">
-                <div class="project-title">
-                    <h5 class="text-primary mb-0">Energy Engineering</h5>
-                </div>
-            </a>
-            <a class="project-item" href="">
-                <img class="img-fluid" src="img/project-6.jpg" alt="">
-                <div class="project-title">
-                    <h5 class="text-primary mb-0">Water Engineering</h5>
-                </div>
-            </a>
+            @foreach ($dokter as $p)
+                <a class="project-item" href="/Informasi/JadwalDokter">
+                    <img class="img-fluid" src="{{ asset('storage/' . $p->gambar) }}" alt="">
+                    <div class="project-title">
+                        <div class="row">
+                            <div class="col-12">
+                                <h5 class="text-primary mt-3">Dokter {{ $p->referensi->deskripsi }}</h5>
+                            </div>
+                            <div class="col-12 ">
+                                <p class="text-primary mb-0 ">{{ $p->nama }}</p>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            @endforeach
         </div>
     </div>
-    <!-- Project End -->
-
-
-
-   
+    <!-- dokter End -->
 @endsection

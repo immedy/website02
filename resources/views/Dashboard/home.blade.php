@@ -10,32 +10,29 @@
                     <thead>
                         <tr>
                             <th>No</th>
-                            <th>Instlasi</th>
-                            <th>Unit</th>
+                            <th>Menu</th>
+                            <th>Deskripsi Menu</th>
                             <th>Aksi</th>
                         </tr>
                     </thead>
                     <tbody>
-                        {{-- @foreach ($user as $p) --}}
+                        @foreach ($dashboard as $p)
                         <tr>
                             <td class="col-1">
-                                <p class=" mb-0"></p>
-                            </td>
-                            <td class="col-7">
-                                <p class=" mb-0"></p>
-                            </td>
-                            <td class="col-3">
-                                <p class=" mb-0"></p>
+                                <p class=" mb-0">{{ $loop->iteration }}</p>
                             </td>
                             <td class="col-auto">
-                                <p class=" mb-0"></p>
+                                <p class=" mb-0">{{ $p->referensi->deskripsi }}</p>
+                            </td>
+                            <td class="col-auto">
+                                <p class=" mb-0">{{ $p->unit }}</p>
                             </td>
                             <td class="col-auto">
                                 <p class=" mb-0">aksi</p>
                             </td>
 
                         </tr>
-                        {{-- @endforeach --}}
+                        @endforeach
                     </tbody>
                 </table>
             </div>

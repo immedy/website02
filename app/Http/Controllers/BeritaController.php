@@ -67,7 +67,9 @@ class BeritaController extends Controller
      */
     public function show($id)
     {
-        //
+        return view('LandingPage.DetailPage.DetailBerita',[
+            'berita'    => berita::findOrFail($id)
+        ]);
     }
 
     /**

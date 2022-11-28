@@ -76,7 +76,7 @@
                     <a href="#" class="nav-link dropdown-toggle {{ Request::is('Informasi/*') ? 'active' : '' }}" data-bs-toggle="dropdown">Informasi</a>
                     <div class="dropdown-menu bg-light m-0 ">
                         <a href="/Informasi/CapaianIndikator" class="dropdown-item {{ Request::is('Informasi/CapaianIndikator') ? 'active' : '' }}">Capaian Indikator PMKP</a>
-                        <a href="/Informasi/BeritaKesehatan" class="dropdown-item {{ Request::is('Informasi/BeritaKesehatan') ? 'active' : '' }}">Berita Kesehatan</a>
+                        <a href="/Informasi/BeritaKesehatan" class="dropdown-item {{ Request::is('Informasi/BeritaKesehatan/*') ? 'active' : '' }}">Berita Kesehatan</a>
                         <a href="/Informasi/JadwalDokter" class="dropdown-item {{ Request::is('Informasi/JadwalDokter') ? 'active' : '' }}">Jadwal Dokter</a>
                         <a href="/Informasi/TataTertib" class="dropdown-item {{ Request::is('Informasi/TataTertib') ? 'active' : '' }}">Tata Tertib Pengunjung</a>
                         <a href="/Informasi/KritikdanSaran" class="dropdown-item {{ Request::is('Informasi/KritikdanSaran') ? 'active' : '' }}">Kritik Dan Saran</a>

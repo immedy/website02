@@ -12,8 +12,8 @@
                                 <div class="row">
                                     <div class="col">
                                         <div class="form-group mandatory">
-                                            <label for="first-name-column" class="form-label">Pilih Instalasi</label>
-                                            <select class="choices form-select" name="jenis" required>
+                                            <label for="first-name-column" class="form-label">Pilih Menu</label>
+                                            <select class="choices form-select" name="referensi_id" required>
                                                 <option selected disabled value="">Silahkan Pilih</option>
                                                 @foreach ($kategori as $p)
                                                     <option value="{{ $p->id }}">{{ $p->deskripsi }}</option>
@@ -25,8 +25,8 @@
                                 <div class="row">
                                     <div class="col">
                                         <div class="form-group">
-                                            <label for="last-name-column" class="form-label">Tambahkan Unit</label>
-                                            <input type="text" id="last-name-column" class="form-control"
+                                            <label for="" class="form-label">Tambahkan Deskripsi Menu</label>
+                                            <input type="text" name="unit" id="" class="form-control"
                                                 placeholder="Tambahkan Nama Unit" name="unit"
                                                 required />
                                         </div>
@@ -64,7 +64,7 @@
                     <div class="col-12">
                         <div class="card">
                             <div class="card-body">
-                                <textarea name="editor" id="editor" cols="30" rows="1000" required placeholder="Tulis Artikel Di sini"><div id="editor">
+                                <textarea name="textarea" id="editor" cols="30" rows="1000" required placeholder="Tulis Artikel Di sini"><div id="editor">
                                 </div></textarea>
                             </div>
                         </div>

@@ -25,25 +25,31 @@
                             <div class="col-md-6">
                                 <div class="form-floating">
                                     <input type="alamat" class="form-control" id="alamat" placeholder="Alamat">
-                                    <label for="alamat">Your Email</label>
+                                    <label for="alamat">Alamat</label>
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="form-floating">
                                     <input type="text" class="form-control" id="name" placeholder="Your Name">
-                                    <label for="name">Your Name</label>
+                                    <label for="name">Tempat Lahir</label>
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="form-floating">
-                                    <input type="email" class="form-control" id="email" placeholder="Your Email">
-                                    <label for="email">Your Email</label>
+                                    <input type="date" class="form-control" id="email" placeholder="Your Email">
+                                    <label for="email">Tanggal Lahir</label>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-floating">
+                                    <input type="number" class="form-control" id="name" placeholder="Your Name">
+                                    <label for="name">No Telpon/Handphone</label>
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="form-floating">
                                     <input type="text" class="form-control" id="name" placeholder="Your Name">
-                                    <label for="name">Your Name</label>
+                                    <label for="name">Hubungan Dengan Pasien</label>
                                 </div>
                             </div>
                             <div class="divider">
@@ -52,7 +58,7 @@
                             <div class="col-md-6">
                                 <div class="form-floating">
                                     <input type="text" class="form-control" id="NamaPasien" placeholder="Nama Pasien">
-                                    <label for="email">Nama Pasienl</label>
+                                    <label for="email">Nama Pasien</label>
                                 </div>
                             </div>
                             <div class="col-md-6">
@@ -63,45 +69,55 @@
                             </div>
                             <div class="col-md-6">
                                 <div class="form-floating">
-                                    <input type="date" class="form-control" id="tanggalpelaporan" >
-                                    
+                                    <input type="text" class="form-control" id="NamaPasien" placeholder="Nama Pasien">
+                                    <label for="email">Tempat Lahir</label>
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="form-floating">
-                                    <input type="text" class="form-control" id="name" placeholder="Your Name">
-                                    <label for="name">Your Name</label>
+                                    <input type="text" class="form-control" id="email" placeholder="Your Email">
+                                    <label for="email">Ruangan</label>
                                 </div>
                             </div>
-                            <div class="col-md-6">
+                            <div class="col-md-12">
                                 <div class="form-floating">
-                                    <input type="email" class="form-control" id="email" placeholder="Your Email">
-                                    <label for="email">Your Email</label>
+                                    <input type="text" class="form-control" id="email" placeholder="Your Email">
+                                    <label for="email">Diagnosa</label>
                                 </div>
                             </div>
                             
+                            <div class="col-md-6">
+                                <div class="form-floating">
+                                    <input type="datetime-local" class="form-control" id="name" placeholder="Your Name">
+                                    <label for="name">Masuk Rumah Sakit</label>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-floating">
+                                    <select class="choices form-select">
+                                        <option selected disabled value=""></option>
+                                        @foreach ($DPJP as $p )
+                                        <option value="{{ $p->id }}">{{ $p->nama }}</option>
+                                        @endforeach
+                                    </select>
+                                    <label for="name">Masuk Rumah Sakit</label>
+                                </div>
+                            </div>
                             <div class="col-12">
                                 <div class="form-group">
+                                    <label for="email">Dokter Penanggung Jawab</label>
                                     <select class="choices form-select">
-                                        <optgroup label="Figures">
-                                            <option value="romboid">Romboid</option>
-                                            <option value="trapeze">Trapeze</option>
-                                            <option value="triangle">Triangle</option>
-                                            <option value="polygon">Polygon</option>
-                                        </optgroup>
-                                        <optgroup label="Colors">
-                                            <option value="red">Red</option>
-                                            <option value="green">Green</option>
-                                            <option value="blue">Blue</option>
-                                            <option value="purple">Purple</option>
-                                        </optgroup>
+                                        <option selected disabled value="">Silahkan Pilih Nama Dokter</option>
+                                        @foreach ($DPJP as $p )
+                                        <option value="{{ $p->id }}">{{ $p->nama }}</option>
+                                        @endforeach
                                     </select>
                                 </div>
                             </div>
                             <div class="col-12">
                                 <div class="form-floating">
                                     <textarea class="form-control" placeholder="Leave a message here" id="message" style="height: 150px"></textarea>
-                                    <label for="message">Message</label>
+                                    <label for="message">Rincian Keluhan Dan Saran</label>
                                 </div>
                             </div>
                             <div class="col-12">

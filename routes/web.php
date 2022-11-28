@@ -2,10 +2,13 @@
 
 use App\Http\Controllers\BeritaController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\DokterController;
 use App\Http\Controllers\ReferensiController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\UserLoginController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\WebsiteController;
+use App\Models\dokter;
 use App\Models\Referensi;
 
 /*
@@ -22,14 +25,24 @@ use App\Models\Referensi;
 Route::get('/', [WebsiteController::class, 'index']);
 Route::get('/Informasi/CapaianIndikator', [WebsiteController::class, 'CapaianIndikator']);
 Route::get('/Informasi/BeritaKesehatan', [WebsiteController::class, 'BeritaKesehatan']);
+Route::get('/Informasi/BeritaKesehatan/{id}', [WebsiteController::class, 'BeritaDetail']);
 Route::get('/Informasi/JadwalDokter', [WebsiteController::class, 'JadwalDokter']);
 Route::get('/Informasi/KritikdanSaran', [WebsiteController::class, 'KritikdanSaran']);
 Route::get('/Informasi/TataTertib', [WebsiteController::class, 'TataTertib']);
 Route::get('/Informasi/LaporanKeluhan', [WebsiteController::class, 'LaporanKeluhan']);
+Route::get('/TestView', function () {
+    return view('Testview.tetsview');
+});
+
+
 
 
 // Dashboard
- Route::resource('/home', DashboardController::class);
- Route::resource('/referensi', ReferensiController::class);
- Route::resource('/pengguna', UserController::class);
- Route::resource('/berita', BeritaController::class);
+ Route::resource('/home', DashboardController::class)->middleware('auth');
+ Route::resource('/referensi', ReferensiController::class)->middleware('auth');
+ Route::resource('/pengguna', UserController::class)->middleware('auth');
+ Route::resource('/berita', BeritaController::class)->middleware('auth')->except('sh)');
+ Route::resource('/dokter', DokterController::class)->middleware('auth');
+ Route::get('/login',[UserLoginController::class,'index'])->name('login');
+ Route::post('/auth', [UserLoginController::class, 'authenticate']);
+ route::post('/logout', [UserLoginController::class, 'logout'])->middleware('auth');

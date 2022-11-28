@@ -88,7 +88,7 @@
                             </a>
                         </li>
                         <li class="sidebar-item {{ Request::is('/') ? 'active' : '' }}">
-                            <a href="" class='sidebar-link'>
+                            <a href="/dokter" class='sidebar-link'>
                                 <i class="bi bi-person-fill"></i>
                                 <span>Dokter</span>
                             </a>
@@ -176,19 +176,12 @@
                                 <a href="#" data-bs-toggle="dropdown" aria-expanded="false">
                                     <div class="user-menu d-flex">
                                         <div class="user-name text-end me-3">
-                                            {{-- <h6 class="mb-0 text-gray-600">{{ auth()->user()->Pegawai->NAMA }}</h6>
-                                            <p class="mb-0 text-sm text-gray-600">{{ auth()->user() }}</p> --}}
+                                            <h6 class="mb-0 text-gray-600">{{ auth()->user()->nama }}</h6>
+                                            <p class="mb-0 text-sm text-gray-600">{{ auth()->user()->referensi->deskripsi }}</p>
                                         </div>
                                         <div class="user-img d-flex align-items-center">
-                                            <div class="avatar avatar-md">
-                                                {{-- @if (auth()->user()->Pegawai->JENIS_KELAMIN == 1)
+                                            <div class="avatar avatar-md">                                                
                                                 <img src="{{ asset('dashboard/images/faces/7.jpg') }}">
-                                                @else
-                                                <img src="{{ asset('dashboard/images/faces/3.jpg') }}">
-                                                @endif --}}
-
-
-
                                             </div>
                                         </div>
                                     </div>
@@ -202,7 +195,7 @@
                                     </li>
                                     <li>
                                         <form action="/logout" method="post">
-                                            {{-- @csrf --}}
+                                            @csrf
                                             <button class="dropdown-item" type="submit">
                                                 <i class="icon-mid bi bi-box-arrow-left me-2">
                                                 </i> Logout</button>

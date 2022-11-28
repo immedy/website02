@@ -29,6 +29,7 @@ return array(
     'App\\Models\\Referensi' => $baseDir . '/app/Models/Referensi.php',
     'App\\Models\\User' => $baseDir . '/app/Models/User.php',
     'App\\Models\\berita' => $baseDir . '/app/Models/berita.php',
+    'App\\Models\\dokter' => $baseDir . '/app/Models/dokter.php',
     'App\\Models\\instalasi' => $baseDir . '/app/Models/instalasi.php',
     'App\\Models\\kategori' => $baseDir . '/app/Models/kategori.php',
     'App\\Policies\\ReferensiPolicy' => $baseDir . '/app/Policies/ReferensiPolicy.php',
