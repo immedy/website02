@@ -24,7 +24,7 @@
                 <tr>
                     <th scope="row">{{ $loop->iteration }}</th>
                     <td>{{ $p->nama }}</td>
-                    <td style="text-justify: center">SPESIALIS {{ $p->referensi->deskripsi }}</td>
+                    <td style="text-justify: center"> {{ $p->ReferensiPoliklinik->deskripsi }}</td>
 
                     @if ($p->senin == 1)
                         <td><i class="fa fa-check text-primary me-3"></i></td>

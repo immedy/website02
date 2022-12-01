@@ -48,8 +48,12 @@
                             </div>
                             <div class="col-md-6">
                                 <div class="form-floating">
-                                    <input type="text" class="form-control" id="name" placeholder="Your Name">
-                                    <label for="name">Hubungan Dengan Pasien</label>
+                                    <select class="choices form-select">
+                                        <option selected disabled value="">Hubungan Dengan Keluarga</option>
+                                        @foreach ($keluarga as $p )
+                                        <option value="{{ $p->id }}">{{ $p->deskripsi }}</option>
+                                        @endforeach
+                                    </select>
                                 </div>
                             </div>
                             <div class="divider">
@@ -75,8 +79,18 @@
                             </div>
                             <div class="col-md-6">
                                 <div class="form-floating">
-                                    <input type="text" class="form-control" id="email" placeholder="Your Email">
-                                    <label for="email">Ruangan</label>
+                                    <input type="date" class="form-control" id="date" placeholder="">
+                                    <label for="date">Tanggal Lahir</label>
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <select class="choices form-select">
+                                        <option selected disabled value="">Silahkan Pilih Tempat Instalasi</option>
+                                        @foreach ($instalasi as $p )
+                                        <option value="{{ $p->id }}">{{ $p->deskripsi }}</option>
+                                        @endforeach
+                                    </select>
                                 </div>
                             </div>
                             <div class="col-md-12">
@@ -86,28 +100,16 @@
                                 </div>
                             </div>
                             
-                            <div class="col-md-6">
+                            <div class="col-md-12">
                                 <div class="form-floating">
                                     <input type="datetime-local" class="form-control" id="name" placeholder="Your Name">
                                     <label for="name">Masuk Rumah Sakit</label>
                                 </div>
                             </div>
-                            <div class="col-md-6">
-                                <div class="form-floating">
-                                    <select class="choices form-select">
-                                        <option selected disabled value=""></option>
-                                        @foreach ($DPJP as $p )
-                                        <option value="{{ $p->id }}">{{ $p->nama }}</option>
-                                        @endforeach
-                                    </select>
-                                    <label for="name">Masuk Rumah Sakit</label>
-                                </div>
-                            </div>
                             <div class="col-12">
                                 <div class="form-group">
-                                    <label for="email">Dokter Penanggung Jawab</label>
                                     <select class="choices form-select">
-                                        <option selected disabled value="">Silahkan Pilih Nama Dokter</option>
+                                        <option selected disabled value="">Silahkan Pilih Dokter Penanggung Jawab</option>
                                         @foreach ($DPJP as $p )
                                         <option value="{{ $p->id }}">{{ $p->nama }}</option>
                                         @endforeach

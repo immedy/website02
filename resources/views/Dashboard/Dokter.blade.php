@@ -36,10 +36,10 @@
                                     <p class=" mb-0">{{ $p->nama }}</p>
                                 </td>
                                 <td class="col-auto">
-                                    <p class=" mb-0">{{ $p->reff_smf_details->deskripsi }}</p>
+                                    <p class=" mb-0">{{ $p->ReferensiSmf->deskripsi }}</p>
                                 </td>
                                 <td class="col-auto">
-                                    <p class=" mb-0">{{ $p->reff_poli_details->deskripsi }}</p>
+                                    <p class=" mb-0">{{ $p->ReferensiPoliklinik->deskripsi }}</p>
                                 </td>
                                 <td class="col-auto">
                                     @if ($p->status = 1)

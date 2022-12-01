@@ -9,24 +9,20 @@ class dokter extends Model
 {
     use HasFactory;
     protected $guarded = ['id'];
-    public function Referensi()
-    {
-        return $this->belongsTo(referensi::class,'smf');
-        return $this->belongsTo(referensi::class,'poliklinik');
-    }
+    
 
     protected $with = [
-        'reff_smf_details',
-        'reff_poli_details',
+        'ReferensiSmf',
+        'ReferensiPoliklinik',
     ];
 
-    public function reff_smf_details()
+    public function ReferensiSmf()
     {
         # code...
         return $this->belongsTo(Referensi::class, 'smf');
     }
 
-    public function reff_poli_details()
+    public function ReferensiPoliklinik()
     {
         # code...
         return $this->belongsTo(Referensi::class, 'poliklinik');

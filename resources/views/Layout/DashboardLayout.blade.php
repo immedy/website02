@@ -16,6 +16,7 @@
     <link rel="stylesheet" href="{{ asset('dashboard/extensions/choices.js/public/assets/styles/choices.css') }}">
     <link rel="stylesheet" href="{{ asset('dashboard/extensions/quill/quill.snow.css') }}" />
     <link rel="stylesheet" href="{{ asset('dashboard/extensions/quill/quill.bubble.css') }}" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
 
 </head>
@@ -68,10 +69,9 @@
                 </div>
                 <div class="sidebar-menu">
                     <ul class="menu">
-                        <li class="sidebar-title">Dashboard</li>
-                        <li class="sidebar-item {{ Request::is('/') ? 'active' : '' }}">
+                        <li class="sidebar-item">
                             <a href="/home" class='sidebar-link'>
-                                <i class="bi bi-grid-fill"></i>
+                                <i class="bi bi-stack"></i>
                                 <span>Dashboard</span>
                             </a>
                         </li>

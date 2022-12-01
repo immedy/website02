@@ -6,6 +6,7 @@ use App\Models\instalasi;
 use App\Models\Referensi;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Models\kategori;
 use RealRashid\SweetAlert\Facades\Alert;
 
 class DashboardController extends Controller
@@ -30,7 +31,7 @@ class DashboardController extends Controller
     public function create()
     {
         return view('Dashboard.detail.createinstalasi',[
-            'kategori' => Referensi::where('jenis','=','4')->get()
+            'kategori' => kategori::where('id','4')->orWhere('id','7')->orWhere('id','')->get()
         ]);
     }
 
@@ -43,7 +44,8 @@ class DashboardController extends Controller
     public function store(Request $request)
     {
         $ValidasiInstalasi = $request->validate([
-            'referensi_id' => 'required',
+            'kategori'     => 'required',
+            'jenis'        => 'required',
             'unit'         => 'required',
             'gambar'       => 'required|image|mimes:jpeg,png,jpg|file|max:200',
             'textarea'     => 'required'
@@ -102,5 +104,11 @@ class DashboardController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    public function getJenis(Request $request)
+    {
+        $data['referensi'] = Referensi::where("jenis",$request->jenis)->get(["deskripsi","id"]);
+        return response()->json($data);
     }
 }

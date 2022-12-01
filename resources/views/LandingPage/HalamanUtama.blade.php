@@ -1,7 +1,7 @@
 @extends('Layout.LandingPageLayout')
 @section('LandigPage')
     <!-- About Start -->
-    <div class="container-xxl py-5">
+    {{-- <div class="container-xxl py-5">
         <div class="container">
             <div class="row g-5">
 
@@ -32,7 +32,7 @@
             </div>
         </div>
     </div>
-    </div>
+    </div> --}}
     <!-- About End -->
 
 
@@ -172,12 +172,11 @@
     <!-- Service End -->
 
     <!-- Laporan Start -->
-    {{-- <div class="container-xxl py-5">
-        <div class="container">
-            <div class="row g-5">
-                <div class="col-lg-12 wow fadeInUp" data-wow-delay="0.1s">
-                    <div class="row g-3">
-                        <div class="col-sm-3 wow fadeIn" data-wow-delay="0.1s">
+    {{-- <div class="container-fluid py-4 d-flex flex-row justify-content-center bg-dark">
+        <div class="container" >           
+                <div class="col-m wow fadeInUp" data-wow-delay="0.1s">
+                    <div class="row ">
+                        <div class="col wow fadeIn " data-wow-delay="0.1s">
                             <div class="bg-light rounded h-100 p-3">
                                 <div
                                     class="bg-white d-flex flex-column justify-content-center text-center rounded h-100 py-4 px-3">
@@ -189,31 +188,55 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-sm-3 fadeIn" data-wow-delay="0.2s">
+                        <div class="col wow fadeIn justify-content-md-center" data-wow-delay="0.4s">
                             <div class="bg-light rounded h-100 p-3">
                                 <div
-                                    class="bg-white d-flex flex-column justify-content-center text-center rounded py-4 px-3">
+                                    class="bg-white d-flex flex-column justify-content-center text-center rounded h-100 py-4 px-3">
                                     <a href="/">
-                                        <img class="align-self-center mb-3"
-                                            src="{{ asset('icon/icon-03-primary.png') }}" />
-                                        <h5 class="mb-0">Laporan</h5>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-sm-3 wow fadeIn" data-wow-delay="0.3s">
-                            <div class="bg-light rounded h-100 p-3">
-                                <div
-                                    class="bg-white d-flex flex-column justify-content-center text-center rounded py-4 px-3">
-                                    <a href="/">
-                                        <img class="align-self-center mb-3" src="{{ asset('icon/icon-04-primary.png') }}"
+                                        <img class="align-self-center mb-3" src="{{ asset('icon/checklist.png') }}"
                                             alt="" />
                                         <h5 class="mb-0">Laporan</h5>
                                     </a>
                                 </div>
                             </div>
                         </div>
-                        <div class="col-sm-3 wow fadeIn" data-wow-delay="0.4s">
+                        <div class="col wow fadeIn " data-wow-delay="0.1s">
+                            <div class="bg-light rounded h-100 p-3">
+                                <div
+                                    class="bg-white d-flex flex-column justify-content-center text-center rounded h-100 py-4 px-3">
+                                    <a href="/">
+                                        <img class="align-self-center mb-3" src="{{ asset('icon/icon-06-primary.png') }}"
+                                            alt="" />
+                                        <h5 class="mb-0">Laporan</h5>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col wow fadeIn justify-content-md-center" data-wow-delay="0.4s">
+                            <div class="bg-light rounded h-100 p-3">
+                                <div
+                                    class="bg-white d-flex flex-column justify-content-center text-center rounded h-100 py-4 px-3">
+                                    <a href="/">
+                                        <img class="align-self-center mb-3" src="{{ asset('icon/checklist.png') }}"
+                                            alt="" />
+                                        <h5 class="mb-0">Laporan</h5>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col wow fadeIn " data-wow-delay="0.1s">
+                            <div class="bg-light rounded h-100 p-3">
+                                <div
+                                    class="bg-white d-flex flex-column justify-content-center text-center rounded h-100 py-4 px-3">
+                                    <a href="/">
+                                        <img class="align-self-center mb-3" src="{{ asset('icon/icon-06-primary.png') }}"
+                                            alt="" />
+                                        <h5 class="mb-0">Laporan</h5>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col wow fadeIn justify-content-md-center" data-wow-delay="0.4s">
                             <div class="bg-light rounded h-100 p-3">
                                 <div
                                     class="bg-white d-flex flex-column justify-content-center text-center rounded h-100 py-4 px-3">
@@ -226,8 +249,7 @@
                             </div>
                         </div>
                     </div>
-                </div>
-            </div>
+                </div>            
         </div>
     </div> --}}
     <!-- Laporan End -->
@@ -245,7 +267,7 @@
                     <div class="project-title">
                         <div class="row">
                             <div class="col-12">
-                                <h5 class="text-primary mt-3">Dokter {{ $p->referensi->deskripsi }}</h5>
+                                <h5 class="text-primary mt-3">Dokter {{ $p->ReferensiSmf->deskripsi }}</h5>
                             </div>
                             <div class="col-12 ">
                                 <p class="text-primary mb-0 ">{{ $p->nama }}</p>

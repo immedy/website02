@@ -72,9 +72,9 @@
 
     {{-- Awal Modal --}}
     <section class="basic-choices">
-        <div class="modal fade text-left" id="info" tabindex="-1" role="dialog" aria-labelledby="myModalLabel130"
+        <div class="modal fade text-left" id="info" tabindex="1" role="dialog" aria-labelledby="myModalLabel130"
             aria-hidden="true">
-            <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+            <div class="modal-dialog modal-dialog-top modal-m" role="document">
                 <div class="modal-content">
                     <form class="form form-vertical" action="/referensi" method="POST">
                         @csrf
@@ -93,7 +93,7 @@
                                         <div class="form-group has-icon-left">
                                             <label for="first-name-icon">Pilih Jenis Kategori</label>
                                             <div class="form-group">
-                                                <select class="choices form-select" name="jenis">
+                                                <select class="choices form-select" name="jenis" id="jenis" onchange="update()" >
                                                     <option selected disabled value="">Silahkan Pilih</option>
                                                     @foreach ($kategori as $p )
                                                     <option value="{{ $p->id }}">{{ $p->kategori }}</option>    
@@ -104,7 +104,7 @@
                                     </div>
                                     <div class="col-12">
                                         <div class="form-group has-icon-left">
-                                            <label for="email-id-icon">Tambahkan Referensi </label>
+                                            <label for="email-id-icon">Jenis Kategori Referensi </label>
                                             <div class="position-relative">
                                                 <input type="text" class="form-control" placeholder="Tambahkan Referensi"
                                                     id="deskripsi" name="deskripsi">
@@ -132,4 +132,6 @@
         </div>
     </section>
     {{-- Akhir Modal --}}
+    
+
 @endsection

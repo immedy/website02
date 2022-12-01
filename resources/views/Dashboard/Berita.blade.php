@@ -63,14 +63,12 @@
                             </td>
                             <td style="text-align: right">
                                 <a href="" class="btn icon btn-outline-primary"><i class="bi bi-pencil"></i></a>
-                                    
                                         <form action="" method="" class="d-inline">
                                             {{-- @method('DELETE')
                                         @csrf --}}
                                             <button class="btn icon btn-outline-danger"
                                                 onclick="return confirm ('Apakah Anda Yakin Menghapus Berita Ini ?')">
                                                 <i class="bi bi-trash"></i></button>
-
                                         </form>
                             </td>
 
@@ -104,7 +102,7 @@
                                     <div class="col-12">
                                         <div class="form-group has-icon-left">
                                             <label for="first-name-icon">Pilih Jenis Kategori</label>
-                                            <div class="form-group">
+                                            <div class="form-floating">
                                                 <select class="choices form-select" name="referensi_id" required>
                                                     <option selected disabled value="">Silahkan Pilih</option>
                                                     @foreach ($referensi as $p)

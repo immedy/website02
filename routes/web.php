@@ -8,8 +8,6 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\UserLoginController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\WebsiteController;
-use App\Models\dokter;
-use App\Models\Referensi;
 
 /*
 |--------------------------------------------------------------------------
@@ -33,6 +31,8 @@ Route::get('/Informasi/LaporanKeluhan', [WebsiteController::class, 'LaporanKeluh
 Route::get('/TestView', function () {
     return view('Testview.tetsview');
 });
+Route::get('/Fasilitas/InstalasiRawatdarurat',[WebsiteController::class, 'InstalasiGawatDarurat']);
+Route::get('/Fasilitas/InstalasiKamarOperasi',[WebsiteController::class, 'InstalasiKamarOperasi']);
 
 
 
@@ -41,8 +41,9 @@ Route::get('/TestView', function () {
  Route::resource('/home', DashboardController::class)->middleware('auth');
  Route::resource('/referensi', ReferensiController::class)->middleware('auth');
  Route::resource('/pengguna', UserController::class)->middleware('auth');
- Route::resource('/berita', BeritaController::class)->middleware('auth')->except('sh)');
+ Route::resource('/berita', BeritaController::class)->middleware('auth');
  Route::resource('/dokter', DokterController::class)->middleware('auth');
  Route::get('/login',[UserLoginController::class,'index'])->name('login');
  Route::post('/auth', [UserLoginController::class, 'authenticate']);
  route::post('/logout', [UserLoginController::class, 'logout'])->middleware('auth');
+ Route::POST('getJenis',[DashboardController::class, 'getJenis']);

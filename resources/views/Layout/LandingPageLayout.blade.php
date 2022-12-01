@@ -7,6 +7,7 @@
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="" name="keywords">
     <meta content="" name="description">
+    <link rel="shortcut icon" href="{{ asset('img/dara.png') }}" type="image/x-icon">
 
    
     <!-- Google Web Fonts -->
@@ -93,14 +94,14 @@
                     </div>
                 </div>
                 <div class="nav-item dropdown">
-                    <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Fasilitas</a>
+                    <a href="#" class="nav-link dropdown-toggle {{ Request::is('Fasilitas/*') ? 'active' : '' }}" data-bs-toggle="dropdown">Fasilitas</a>
                     <div class="dropdown-menu bg-light m-0">
-                        <a href="/InstalasiRawatdarurat" class="dropdown-item">Instalasi Gawat Darurat</a>
+                        <a href="/Fasilitas/InstalasiRawatdarurat" class="dropdown-item {{ Request::is('Fasilitas/InstalasiRawatdarurat') ? 'active' : '' }}">Instalasi Gawat Darurat</a>
                         <a href="/InstalasiRawatInap" class="dropdown-item">Instalasi Rawat Inap</a>
                         <a href="/InstalasiRawatJalan" class="dropdown-item">Instalasi Rawat Jalan</a>
-                        <a href="/InstalasiKamarOperasi" class="dropdown-item">Instalasi Kamar Operasi</a>
+                        <a href="/Fasilitas/InstalasiKamarOperasi" class="dropdown-item {{ Request::is('Fasilitas/InstalasiKamarOperasi') ? 'active' : '' }}">Instalasi Kamar Operasi</a>
                         <a href="/InstalasiLab" class="dropdown-item">Instalasi Laboratorium</a>
-                        <a href="InstalasiRadiologi" class="dropdown-item">Instalasi Radiologi</a>
+                        <a href="/InstalasiRadiologi" class="dropdown-item">Instalasi Radiologi</a>
                         <a href="/InstalasiFarmasi" class="dropdown-item">Instalasi Farmasi</a>
                         <a href="/InstalasiCareUnit" class="dropdown-item">Intensive Care Unit</a>
                         <a href="/InstalasiPenunjang" class="dropdown-item ">Instalasi Penunjang</a>

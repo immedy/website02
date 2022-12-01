@@ -13,15 +13,8 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('instalasis', function (Blueprint $table) {
+        Schema::create('informasis', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('kategori');
-            $table->foreignId('jenis');
-            $table->string('unit');
-            $table->string('gambar');
-            $table->longText('textarea');
-            $table->foreignId('user_id');
-            $table->boolean('status');
             $table->timestamps();
         });
     }
@@ -33,6 +26,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('instalasis');
+        Schema::dropIfExists('informasis');
     }
 };

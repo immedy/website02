@@ -15,9 +15,9 @@ class WebsiteController extends Controller
 {
     public function index()
     {
-        return view('LandingPage.HalamanUtama',[
-            'berita' => berita::orderBy('created_at','desc')->get(),
-            'dokter' => dokter::all()
+        return view('LandingPage.HalamanUtama', [
+            'berita' => berita::with('referensi')->orderBy('created_at', 'desc')->get(),
+            'dokter' => dokter::with('ReferensiSmf')->get()
         ]);
     }
 
@@ -29,21 +29,21 @@ class WebsiteController extends Controller
     public function BeritaKesehatan()
     {
         return view('LandingPage.Informasi.BeritaKesehatan', [
-            'berita' => berita::where('status','=','1')->orderBy('created_at','desc')->get()
+            'berita' => berita::where('status', '=', '1')->orderBy('created_at', 'desc')->get()
         ]);
     }
 
     public function JadwaLDokter()
     {
-        return view('LandingPage.Informasi.JadwalDokter',[
+        return view('LandingPage.Informasi.JadwalDokter', [
             'dokter' => dokter::all()
         ]);
     }
 
     public function TataTertib()
     {
-        return view('LandingPage.Informasi.TataTertib',[
-            'tatib' => instalasi::where('referensi_id','15')->get()
+        return view('LandingPage.Informasi.TataTertib', [
+            'tatib' => instalasi::where('jenis', '15')->get()
         ]);
     }
 
@@ -54,17 +54,31 @@ class WebsiteController extends Controller
 
     public function LaporanKeluhan()
     {
-        return view('LandingPage.Informasi.LaporanKeluhan',[
-            'DPJP' => dokter::where('status','1')->get(),
-            'layanan' => Referensi::all()
+        return view('LandingPage.Informasi.LaporanKeluhan', [
+            'DPJP' => dokter::where('status', '1')->get(),
+            'instalasi' => Referensi::where('jenis', '=', '4')->get(),
+            'keluarga' => Referensi::where('jenis', '8')->get()
         ]);
     }
-    
+
     public function BeritaDetail($id)
     {
         $EnskripsiID = Crypt::decryptString($id);
-        return view('LandingPage.DetailPage.DetailBerita',[
-            'berita' =>berita::findOrfail($EnskripsiID)
+        return view('LandingPage.DetailPage.DetailBerita', [
+            'berita' => berita::findOrfail($EnskripsiID)
+        ]);
+    }
+
+    public function InstalasiGawatDarurat()
+    {
+        return view('LandingPage.Fasilitas.InstalasiRawatdarurat', [
+            'IGD' => instalasi::where('jenis', '3')->get()
+        ]);
+    }
+    public function InstalasiKamarOperasi()
+    {
+        return view('LandingPage.Fasilitas.InstalasiKamarOperasi', [
+            'OK' => instalasi::where('jenis', '31')->get()
         ]);
     }
 }
