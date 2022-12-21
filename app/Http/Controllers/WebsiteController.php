@@ -2,21 +2,24 @@
 
 namespace App\Http\Controllers;
 
+use Reflector;
 use App\Models\berita;
 use App\Models\dokter;
+use App\Models\keluhan;
 use App\Models\instalasi;
 use App\Models\Referensi;
 use Illuminate\Http\Request;
 use PhpParser\Node\Stmt\Return_;
+use Illuminate\Auth\Events\Validated;
 use Illuminate\Support\Facades\Crypt;
-use Reflector;
+use RealRashid\SweetAlert\Facades\Alert;
 
 class WebsiteController extends Controller
 {
     public function index()
     {
         return view('LandingPage.HalamanUtama', [
-            'berita' => berita::with('referensi')->orderBy('created_at', 'desc')->get(),
+            'berita' => berita::with('referensi')->orderBy('created_at', 'desc')->paginate(3),
             'dokter' => dokter::with('ReferensiSmf')->get()
         ]);
     }
@@ -47,11 +50,6 @@ class WebsiteController extends Controller
         ]);
     }
 
-    public function KritikdanSaran()
-    {
-        return view('LandingPage.Informasi.KritikdanSaran');
-    }
-
     public function LaporanKeluhan()
     {
         return view('LandingPage.Informasi.LaporanKeluhan', [
@@ -80,5 +78,31 @@ class WebsiteController extends Controller
         return view('LandingPage.Fasilitas.InstalasiKamarOperasi', [
             'OK' => instalasi::where('jenis', '31')->get()
         ]);
+    }
+
+    public function ErrorPage()
+    {
+        return view('LandingPage.ErrorPage');
+    }
+
+    public function StoreKeluhan(Request $request)
+    {
+        $ValidasiKeluhan = $request->validate([
+            'namapelapor' => 'required',
+            'alamtpelapor' => 'required',
+            'nohandphone' => 'required',
+            'hubungan'      => 'required',
+            'namapasien'    => 'required',
+            'norm'          => 'required',
+            'tempatlahir'   => 'required',
+            'tanggallahir' => 'required',
+            'alamatpasien' => 'required',
+            'keluhan'       => 'required'
+        ]);
+        keluhan::create($ValidasiKeluhan);
+        if($ValidasiKeluhan){
+            alert()->success('Sukses','Laporan Keluhanan Anda telah Kami Terima')->showConfirmButton('Confirm', '#3085d6');
+            return back();
+        }
     }
 }

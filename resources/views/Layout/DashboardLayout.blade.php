@@ -100,7 +100,7 @@
                             </a>
                         </li>
                         <li class="sidebar-item {{ Request::is('/') ? 'active' : '' }}">
-                            <a href="" class='sidebar-link'>
+                            <a href="/keluhan" class='sidebar-link'>
                                 <i class="bi bi-person-fill"></i>
                                 <span>Laporan Keluhan</span>
                             </a>

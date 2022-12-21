@@ -540,6 +540,7 @@ class ComposerStaticInit8cd73adf4530bb38cc41cdf079b6f0f4
         'App\\Models\\informasi' => __DIR__ . '/../..' . '/app/Models/informasi.php',
         'App\\Models\\instalasi' => __DIR__ . '/../..' . '/app/Models/instalasi.php',
         'App\\Models\\kategori' => __DIR__ . '/../..' . '/app/Models/kategori.php',
+        'App\\Models\\keluhan' => __DIR__ . '/../..' . '/app/Models/keluhan.php',
         'App\\Policies\\ReferensiPolicy' => __DIR__ . '/../..' . '/app/Policies/ReferensiPolicy.php',
         'App\\Providers\\AppServiceProvider' => __DIR__ . '/../..' . '/app/Providers/AppServiceProvider.php',
         'App\\Providers\\AuthServiceProvider' => __DIR__ . '/../..' . '/app/Providers/AuthServiceProvider.php',

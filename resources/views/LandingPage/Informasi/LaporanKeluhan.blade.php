@@ -11,45 +11,34 @@
                     <h1 class="display-5 mb-4">JIka Anda Mempunyai Keluhan Tentang Pelayanan Kami</h1>
                 </div>
                 <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.5s">
-                    <form>
+                    <form action="/StoreKeluhan" method="POST">
+                        @csrf
                         <div class="row g-3">
                             <div class="divider">
                                 <code>Data Pelapor</code>
                             </div>
-                            <div class="col-md-6">
+                            <div class="col-md-full">
                                 <div class="form-floating">
-                                    <input type="text" class="form-control" id="NamaPelapor" placeholder="Nama Lengkap">
-                                    <label for="nama">Nama</label>
+                                    <input type="text" class="form-control" id="NamaPelapor" name="namapelapor">
+                                    <label for="nama">Nama Pelapor</label>
                                 </div>
                             </div>
-                            <div class="col-md-6">
+                            <div class="col-md-full">
                                 <div class="form-floating">
-                                    <input type="alamat" class="form-control" id="alamat" placeholder="Alamat">
+                                    <input type="alamat" class="form-control" id="alamat" name="alamtpelapor">
                                     <label for="alamat">Alamat</label>
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="form-floating">
-                                    <input type="text" class="form-control" id="name" placeholder="Your Name">
-                                    <label for="name">Tempat Lahir</label>
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="form-floating">
-                                    <input type="date" class="form-control" id="email" placeholder="Your Email">
-                                    <label for="email">Tanggal Lahir</label>
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="form-floating">
-                                    <input type="number" class="form-control" id="name" placeholder="Your Name">
+                                    <input type="number" class="form-control" id="name" name="nohandphone">
                                     <label for="name">No Telpon/Handphone</label>
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="form-floating">
-                                    <select class="choices form-select">
-                                        <option selected disabled value="">Hubungan Dengan Keluarga</option>
+                                    <select class="choices form-select" name="hubungan">
+                                        <option selected disabled value="">Hubungan Dengan Pasien</option>
                                         @foreach ($keluarga as $p )
                                         <option value="{{ $p->id }}">{{ $p->deskripsi }}</option>
                                         @endforeach
@@ -61,64 +50,37 @@
                             </div>
                             <div class="col-md-6">
                                 <div class="form-floating">
-                                    <input type="text" class="form-control" id="NamaPasien" placeholder="Nama Pasien">
+                                    <input type="text" class="form-control" id="NamaPasien" name="namapasien">
                                     <label for="email">Nama Pasien</label>
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="form-floating">
-                                    <input type="number" class="form-control" id="norm" placeholder="No Rekam Medik">
+                                    <input type="number" class="form-control" id="norm" name="norm">
                                     <label for="name">No Rekam Medik</label>
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="form-floating">
-                                    <input type="text" class="form-control" id="NamaPasien" placeholder="Nama Pasien">
+                                    <input type="text" class="form-control" id="NamaPasien" name="tempatlahir">
                                     <label for="email">Tempat Lahir</label>
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="form-floating">
-                                    <input type="date" class="form-control" id="date" placeholder="">
+                                    <input type="date" class="form-control" id="date" name="tanggallahir">
                                     <label for="date">Tanggal Lahir</label>
                                 </div>
                             </div>
                             <div class="col-md-12">
-                                <div class="form-group">
-                                    <select class="choices form-select">
-                                        <option selected disabled value="">Silahkan Pilih Tempat Instalasi</option>
-                                        @foreach ($instalasi as $p )
-                                        <option value="{{ $p->id }}">{{ $p->deskripsi }}</option>
-                                        @endforeach
-                                    </select>
-                                </div>
-                            </div>
-                            <div class="col-md-12">
                                 <div class="form-floating">
-                                    <input type="text" class="form-control" id="email" placeholder="Your Email">
-                                    <label for="email">Diagnosa</label>
-                                </div>
-                            </div>
-                            
-                            <div class="col-md-12">
-                                <div class="form-floating">
-                                    <input type="datetime-local" class="form-control" id="name" placeholder="Your Name">
-                                    <label for="name">Masuk Rumah Sakit</label>
-                                </div>
-                            </div>
-                            <div class="col-12">
-                                <div class="form-group">
-                                    <select class="choices form-select">
-                                        <option selected disabled value="">Silahkan Pilih Dokter Penanggung Jawab</option>
-                                        @foreach ($DPJP as $p )
-                                        <option value="{{ $p->id }}">{{ $p->nama }}</option>
-                                        @endforeach
-                                    </select>
+                                    <textarea class="form-control" name="alamatpasien" id="message" style="height: 75px"></textarea>
+                                    <label for="message">Alamat (Sesui KTP)</label>
                                 </div>
                             </div>
                             <div class="col-12">
                                 <div class="form-floating">
-                                    <textarea class="form-control" placeholder="Leave a message here" id="message" style="height: 150px"></textarea>
+                                    <textarea class="form-control" name="keluhan" id="message" style="height: 150px"></textarea>
                                     <label for="message">Rincian Keluhan Dan Saran</label>
                                 </div>
                             </div>

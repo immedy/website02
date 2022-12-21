@@ -40,7 +40,7 @@
     </div>
     <!-- Spinner End -->
 
-
+    @include('sweetalert::alert')
     <!-- Topbar Start -->
     <div class="container-fluid bg-dark px-0">
         <div class="row g-0 d-none d-lg-flex">
@@ -76,11 +76,10 @@
                 <div class="nav-item dropdown">
                     <a href="#" class="nav-link dropdown-toggle {{ Request::is('Informasi/*') ? 'active' : '' }}" data-bs-toggle="dropdown">Informasi</a>
                     <div class="dropdown-menu bg-light m-0 ">
-                        <a href="/Informasi/CapaianIndikator" class="dropdown-item {{ Request::is('Informasi/CapaianIndikator') ? 'active' : '' }}">Capaian Indikator PMKP</a>
-                        <a href="/Informasi/BeritaKesehatan" class="dropdown-item {{ Request::is('Informasi/BeritaKesehatan/*') ? 'active' : '' }}">Berita Kesehatan</a>
+                        <a href="/HalamanError" class="dropdown-item {{ Request::is('Informasi/CapaianIndikator') ? 'active' : '' }}">Capaian Indikator PMKP</a>
+                        <a href="/Informasi/BeritaKesehatan" class="dropdown-item {{ Request::is('Informasi/BeritaKesehatan') ? 'active' : '' }}">Berita Kesehatan</a>
                         <a href="/Informasi/JadwalDokter" class="dropdown-item {{ Request::is('Informasi/JadwalDokter') ? 'active' : '' }}">Jadwal Dokter</a>
                         <a href="/Informasi/TataTertib" class="dropdown-item {{ Request::is('Informasi/TataTertib') ? 'active' : '' }}">Tata Tertib Pengunjung</a>
-                        <a href="/Informasi/KritikdanSaran" class="dropdown-item {{ Request::is('Informasi/KritikdanSaran') ? 'active' : '' }}">Kritik Dan Saran</a>
                         <a href="/Informasi/LaporanKeluhan" class="dropdown-item {{ Request::is('Informasi/LaporanKeluhan') ? 'active' : '' }}">Lapor Keluhan</a>
                     </div>
                 </div>
@@ -109,7 +108,7 @@
                     </div>
                 </div>
             </div>
-            <a href="" class="btn btn-primary px-3 d-none d-lg-block">Daftar Online</a>
+            <a href="/HalamanError" class="btn btn-primary px-3 d-none d-lg-block">Daftar Online</a>
         </div>
     </nav>
     <!-- Navbar End -->
@@ -121,7 +120,7 @@
             <div class="carousel-inner">
                 <div class="carousel-item active">
                     <img class="w-100" src="{{ asset('img/dara1.jpg') }}" alt="Image">
-                    <div class="carousel-caption">
+                    {{-- <div class="carousel-caption">
                         <div class="container">
                             <div class="row justify-content-center">
                                 <div class="col-lg-10 text-start">
@@ -133,11 +132,11 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </div> --}}
                 </div>
                 <div class="carousel-item">
                     <img class="w-100" src="{{ asset('img/dara2.jpg') }}" alt="Image">
-                    <div class="carousel-caption">
+                    {{-- <div class="carousel-caption">
                         <div class="container">
                             <div class="row justify-content-center">
                                 <div class="col-lg-10 text-start">
@@ -149,11 +148,11 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </div> --}}
                 </div>
                 <div class="carousel-item">
                     <img class="w-100" src="{{ asset('img/dara3.jpg') }}" alt="Image">
-                    <div class="carousel-caption">
+                    {{-- <div class="carousel-caption">
                         <div class="container">
                             <div class="row justify-content-center">
                                 <div class="col-lg-10 text-start">
@@ -165,11 +164,11 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </div> --}}
                 </div>
                 <div class="carousel-item">
                     <img class="w-100" src="{{ asset('img/dara4.jpg') }}" alt="Image">
-                    <div class="carousel-caption">
+                    {{-- <div class="carousel-caption">
                         <div class="container">
                             <div class="row justify-content-center">
                                 <div class="col-lg-10 text-start">
@@ -181,7 +180,7 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </div> --}}
                 </div>
             </div>
             <button class="carousel-control-prev" type="button" data-bs-target="#header-carousel" data-bs-slide="prev">
