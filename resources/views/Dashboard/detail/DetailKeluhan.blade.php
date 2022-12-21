@@ -34,7 +34,7 @@
                                         <label>Hubungan Dengan Pasien</label>
                                     </div>
                                     <div class="col-md-8 form-group">
-                                        <input type="text"  class="form-control" disabled value="{{ $DetailKeluhan->hubungan }}">
+                                        <input type="text"  class="form-control" disabled value="{{ $DetailKeluhan->referensi->deskripsi }}">
                                     </div>
                                     <div class="col-md-4">
                                         <label>Nama Pasien</label>

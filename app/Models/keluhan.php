@@ -9,4 +9,8 @@ class keluhan extends Model
 {
     use HasFactory;
     protected $guarded = ['id'];
+    public function referensi()
+    {
+        return $this->belongsTo(Referensi::class,'hubungan');
+    }
 }
