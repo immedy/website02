@@ -70,7 +70,7 @@
                                         <label>Keluhan</label>
                                     </div>
                                     <div class="col-md-8 form-group">
-                                        <textarea type="text"  class="form-control" disabled value="">{{ $DetailKeluhan->keluhan }}</textarea>
+                                        <textarea type="text"  class="form-control"  style="height: 150px" disabled >{{ $DetailKeluhan->keluhan }}</textarea>
                                     </div>
                                 </div>
                             </div>
