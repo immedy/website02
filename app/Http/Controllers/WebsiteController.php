@@ -79,6 +79,14 @@ class WebsiteController extends Controller
             'OK' => instalasi::where('jenis', '31')->get()
         ]);
     }
+    public function InstalasiRawatJalan()
+    {
+        return view('LandingPage.Fasilitas.InstalasiRawatJalan');
+    }
+    public function InstalasiRawatInap()
+    {
+        return view('LandingPage.Fasilitas.InstalasiRawatInap');
+    }
 
     public function ErrorPage()
     {

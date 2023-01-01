@@ -96,14 +96,14 @@
                     <a href="#" class="nav-link dropdown-toggle {{ Request::is('Fasilitas/*') ? 'active' : '' }}" data-bs-toggle="dropdown">Fasilitas</a>
                     <div class="dropdown-menu bg-light m-0">
                         <a href="/Fasilitas/InstalasiRawatdarurat" class="dropdown-item {{ Request::is('Fasilitas/InstalasiRawatdarurat') ? 'active' : '' }}">Instalasi Gawat Darurat</a>
-                        <a href="/InstalasiRawatInap" class="dropdown-item">Instalasi Rawat Inap</a>
-                        <a href="/InstalasiRawatJalan" class="dropdown-item">Instalasi Rawat Jalan</a>
+                        <a href="/Fasilitas/InstalasiRawatInap" class="dropdown-item {{ Request::is('Fasilitas/InstalasiRawatInap') ? 'active' : '' }}">Instalasi Rawat Inap</a>
+                        <a href="/Fasilitas/InstalasiRawatJalan" class="dropdown-item {{ Request::is('Fasilitas/InstalasiRawatJalan') ? 'active' : '' }}">Instalasi Rawat Jalan</a>
                         <a href="/Fasilitas/InstalasiKamarOperasi" class="dropdown-item {{ Request::is('Fasilitas/InstalasiKamarOperasi') ? 'active' : '' }}">Instalasi Kamar Operasi</a>
-                        <a href="/InstalasiLab" class="dropdown-item">Instalasi Laboratorium</a>
-                        <a href="/InstalasiRadiologi" class="dropdown-item">Instalasi Radiologi</a>
-                        <a href="/InstalasiFarmasi" class="dropdown-item">Instalasi Farmasi</a>
-                        <a href="/InstalasiCareUnit" class="dropdown-item">Intensive Care Unit</a>
-                        <a href="/InstalasiPenunjang" class="dropdown-item ">Instalasi Penunjang</a>
+                        <a href="/Fasilitas/InstalasiLab" class="dropdown-item {{ Request::is('/Fasilitas/InstalasiLab') ? 'active' : '' }}">Instalasi Laboratorium</a>
+                        <a href="/Fasilitas/InstalasiRadiologi" class="dropdown-item {{ Request::is('/Fasilitas/InstalasiRadiologi') ? 'active' : '' }}">Instalasi Radiologi</a>
+                        <a href="/Fasilitas/InstalasiFarmasi" class="dropdown-item {{ Request::is('/Fasilitas/InstalasiFarmasi') ? 'active' : '' }}">Instalasi Farmasi</a>
+                        <a href="/Fasilitas/InstalasiCareUnit" class="dropdown-item {{ Request::is('/Fasilitas/InstalasiCareUnit') ? 'active' : '' }}">Intensive Care Unit</a>
+                        <a href="/Fasilitas/InstalasiPenunjang" class="dropdown-item {{ Request::is('Fasilitas/Fasilitas/InstalasiPenunjang') ? 'active' : '' }}">Instalasi Penunjang</a>
 
                     </div>
                 </div>

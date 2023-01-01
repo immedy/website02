@@ -32,7 +32,14 @@ Route::get('/TestView', function () {
     return view('Testview.tetsview');
 });
 Route::get('/Fasilitas/InstalasiRawatdarurat',[WebsiteController::class, 'InstalasiGawatDarurat']);
+Route::get('/Fasilitas/InstalasiRawatInap', [WebsiteController::class,'InstalasiRawatInap']);
+Route::get('/Fasilitas/InstalasiRawatJalan',[WebsiteController::class,'InstalasiRawatJalan']);
 Route::get('/Fasilitas/InstalasiKamarOperasi',[WebsiteController::class, 'InstalasiKamarOperasi']);
+Route::get('/Fasilitas/InstalasiLab',[WebsiteController::class,'InstalasiLab']);
+Route::get('/Fasilitas/InstalasiRadiologi',[WebsiteController::class,'InstalasiRadiologi']);
+Route::get('/Fasilitas/InstalasiFarmasi',[WebsiteController::class,'InstalasiFarmasi']);
+Route::get('/Fasilitas/InstalasiCareUnit',[WebsiteController::class,'InstalasiCareUnit']);
+Route::get('/Fasilitas/InstalasiPenunjang',[WebsiteController::class,'InstlasiPenunjang']);
 Route::get('/HalamanError',[WebsiteController::class, 'ErrorPage']);
 Route::post('/StoreKeluhan',[WebsiteController::class, 'StoreKeluhan']);
 
