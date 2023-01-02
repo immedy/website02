@@ -39,7 +39,7 @@ Route::get('/Fasilitas/InstalasiLab',[WebsiteController::class,'InstalasiLab']);
 Route::get('/Fasilitas/InstalasiRadiologi',[WebsiteController::class,'InstalasiRadiologi']);
 Route::get('/Fasilitas/InstalasiFarmasi',[WebsiteController::class,'InstalasiFarmasi']);
 Route::get('/Fasilitas/InstalasiCareUnit',[WebsiteController::class,'InstalasiCareUnit']);
-Route::get('/Fasilitas/InstalasiPenunjang',[WebsiteController::class,'InstlasiPenunjang']);
+Route::get('/Fasilitas/InstalasiPenunjang',[WebsiteController::class,'InstalasiPenunjang']);
 Route::get('/HalamanError',[WebsiteController::class, 'ErrorPage']);
 Route::post('/StoreKeluhan',[WebsiteController::class, 'StoreKeluhan']);
 

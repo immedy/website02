@@ -87,6 +87,26 @@ class WebsiteController extends Controller
     {
         return view('LandingPage.Fasilitas.InstalasiRawatInap');
     }
+    public function InstalasiLab()
+    {
+        return view('LandingPage.Fasilitas.InstalasiLab');
+    }
+    public function InstalasiRadiologi()
+    {
+        return view('LandingPage.Fasilitas.InstalasiRadiologi');
+    }
+    public function InstalasiFarmasi()
+    {
+        return view('LandingPage.Fasilitas.InstalasiFarmasi');
+    }
+    public function InstalasiCareUnit()
+    {
+        return view('LandingPage.Fasilitas.InstalasiCareUnit');
+    }
+    public function InstalasiPenunjang()
+    {
+        return view('LandingPage.Fasilitas.InstalasiPenunjang');
+    }
 
     public function ErrorPage()
     {
