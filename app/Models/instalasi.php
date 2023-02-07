@@ -11,6 +11,6 @@ class instalasi extends Model
     protected $guarded = ['id'];
     public function referensi()
     {
-        return $this->belongsTo(Referensi::class);
+        return $this->belongsTo(Referensi::class,'jenis','id');
     }
 }

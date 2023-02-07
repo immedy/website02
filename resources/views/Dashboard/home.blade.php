@@ -23,7 +23,7 @@
                                     <p class=" mb-0">{{ $loop->iteration }}</p>
                                 </td>
                                 <td class="col-auto">
-                                    <p class=" mb-0">{{ $p->jenis }}</p>
+                                    <p class=" mb-0">{{ $p->referensi->deskripsi }}</p>
                                 </td>
                                 <td class="col-auto">
                                     <p class=" mb-0">{{ $p->unit }}</p>

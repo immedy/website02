@@ -2,7 +2,7 @@
 @section('LandigPage')
 <div class="container py-5 wow fadeInUp" data-wow-delay="0.1s">
     <div class=" section-title text-center position-relative pb-3 mb-5 mx-auto" style="max-width: 600px;">
-        <h1 class="mb-0"> INSTALASI RAWAT DARURAt T</h1>
+        <h1 class="mb-0"> INSTALASI RAWAT DARURAT</h1>
     </div>
     @foreach ($IGD as $p)
         <div class="row mb-5">
