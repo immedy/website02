@@ -1,4 +1,4 @@
-@extends('Layout.DashboardLayout')
+@extends('Layout.DashboardTemplate')
 @section('DashboardLayout')
     
     <form action="/home" method="post" enctype="multipart/form-data">

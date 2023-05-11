@@ -17,12 +17,12 @@ class UserLoginController extends Controller
     {
         $credentials = $request->validate([
             'username' => ['required'],
-            'password' => ['required']
+            'password' => ['required'],
         ]);
         if (Auth::attempt($credentials)) {
             $request->session()->regenerate();
             Alert::toast('Selamat Datang ', 'success');
-            return redirect()->intended('/home');
+            return redirect('/home');
         }
         Alert::Toast('Username Dan Password Tidak Sama', 'error');
         return back();

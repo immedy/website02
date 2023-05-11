@@ -5,9 +5,9 @@
         <div class="container">
             <div class="row g-5">
 
-                <div class="col-lg-6 wow fadeIn" data-wow-delay="0.5s">
+                <div class="col-lg wow fadeIn" data-wow-delay="0.5s">
                     <p class="fw-medium text-uppercase text-primary mb-2">Tentang Kami</p>
-                    <h1 class="display-5 mb-4">Rumah Sakit Umum Daerah Dayaku Raja Kota Bangun</h1>
+                    <h1 class="display-5 mb-4">Rumah Sakit Umum Daerah Dayaku Raja</h1>
                     <p class="mb-4">Rumah Sakit Umum Daerah (RSUD) Dayaku Raja Kabupaten Kutai Kartanegara
                         merupakan Rumah Sakit milik Pemerintah Kabupaten Kutai Kartanegara Provinsi Kalimantan Timur sesuai
                         Peraturan Bupati Nomor 27 tentang Organisasi dan Tata Kerja Unit Pelaksana Teknis (UPT) RSUD Dayaku
@@ -19,7 +19,7 @@
                         tentang Pembentukan Struktur dan Organisasi Tata Kerja Rumah sakit Umum Daerah Dayaku Raja Kota
                         Bangun.</p>
                 </div>
-                <div class="col-lg-6">
+                {{-- <div class="col-lg-6">
                     <div class="row h-100">
                         <div class="col-6 align-self-start wow fadeInUp" data-wow-delay="0.1s">
                             <img class="img-fluid" src="{{ asset('img/about-1.jpg') }}">
@@ -28,7 +28,7 @@
                             <img class="img-fluid" src="{{ asset('img/about-2.jpg') }}">
                         </div>
                     </div>
-                </div>
+                </div> --}}
             </div>
         </div>
     </div>
@@ -51,11 +51,10 @@
                         </button>
                     </div>
                 </div>
-                <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.5s">
-                    <p class="fw-medium text-uppercase text-primary mb-2">Kenapa Harus Ke Dayaku Raja</p>
-                    <h1 class=" ">Sesuai Motto Rumah Sakit </h1>
-                    <h1 class=" mb-4">MELAYANI SEPENUH DAYAKU</h1>
-
+                <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.5s">                   
+                    <h1 class=" ">Motto RSUD DAYAKU RAJA </h1>
+                    <h3 class=" mb-4">Menyapa Dengan Senyum, Merawat Dengan Hati</h3>
+                    <p class="fw-medium text-uppercase text-primary mb-2">Nilai-Nilai RSUD DAYAKU RAJA</p>
                     <div class="row gy-4">
                         <div class="col-12">
                             <div class="d-flex">
@@ -63,9 +62,8 @@
                                     <i class="fa fa-check text-white"></i>
                                 </div>
                                 <div class="ms-4">
-                                    <h4>Tempat Strategis</h4>
-                                    <span>Menjadi rumah sakit rujukan bagi 7 Kecamatan yang ada dihulu mahakam
-                                        Kabupaten Kutai Kartanegara</span>
+                                    <h4>Berorientasi pada pelayanan</h4>
+                                    <span>Berkomitmen memberikan pelayanan prima demi kepuasan pasien</span>
                                 </div>
                             </div>
                         </div>
@@ -75,9 +73,8 @@
                                     <i class="fa fa-check text-white"></i>
                                 </div>
                                 <div class="ms-4">
-                                    <h4>Jarak Tempuh</h4>
-                                    <p class="mb-0">Berjarak ± 2 Jam Ke Ibu Kota Kabupaten </p>
-                                    <p class="mb-0">Berjarak ± 3 Jam Ke Ibu Kota Propinsi </p>
+                                    <h4>Akuntabel</h4>
+                                    <p class="mb-0">Mampu mengemban amanat dan kepercayaan yang penuh tanggung jawab</p>
                                 </div>
                             </div>
                         </div>
@@ -87,9 +84,8 @@
                                     <i class="fa fa-check text-white"></i>
                                 </div>
                                 <div class="ms-4">
-                                    <h4>Pegawai Profesional</h4>
-                                    <p class="mb-0">Mempunyai Tenaga Kesehatan Yang profesional di setiap bidang yang ada
-                                        di rumah sakit </p>
+                                    <h4>Kompeten</h4>
+                                    <p class="mb-0">Meningkatkan kompetensi diri dengan terus belajar</p>
                                 </div>
                             </div>
                         </div>
@@ -99,8 +95,52 @@
                                     <i class="fa fa-check text-white"></i>
                                 </div>
                                 <div class="ms-4">
-                                    <h4>24/7 Pelayanan IGD</h4>
-                                    <p class="mb-0">Tenaga Kesehatan yang selalu siap membantu pasien</p>
+                                    <h4>Harmonis</h4>
+                                    <p class="mb-0">Saling peduli, menghargai dan bertoleransi dengan perbedaan</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <div class="d-flex">
+                                <div class="flex-shrink-0 btn-lg-square rounded-circle bg-primary">
+                                    <i class="fa fa-check text-white"></i>
+                                </div>
+                                <div class="ms-4">
+                                    <h4>Loyal</h4>
+                                    <p class="mb-0">Berdedikasi tinggi terhadap kepentingan bangsa dan bernegara</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <div class="d-flex">
+                                <div class="flex-shrink-0 btn-lg-square rounded-circle bg-primary">
+                                    <i class="fa fa-check text-white"></i>
+                                </div>
+                                <div class="ms-4">
+                                    <h4>Adaptif</h4>
+                                    <p class="mb-0">Siap menghadapi ataupun menjadi motor perubahan terus mengasah kreativitas dan berinovasi</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <div class="d-flex">
+                                <div class="flex-shrink-0 btn-lg-square rounded-circle bg-primary">
+                                    <i class="fa fa-check text-white"></i>
+                                </div>
+                                <div class="ms-4">
+                                    <h4>Kolaboratif</h4>
+                                    <p class="mb-0">Saling bersinergi dalambekerja sama</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <div class="d-flex">
+                                <div class="flex-shrink-0 btn-lg-square rounded-circle bg-primary">
+                                    <i class="fa fa-check text-white"></i>
+                                </div>
+                                <div class="ms-4">
+                                    <h4>Ramah</h4>
+                                    <p class="mb-0">Melayani dengan sopan, santun, dan beretiket</p>
                                 </div>
                             </div>
                         </div>

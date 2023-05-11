@@ -108,7 +108,7 @@
                     </div>
                 </div>
             </div>
-            <a href="/HalamanError" class="btn btn-primary px-3 d-none d-lg-block">Daftar Online</a>
+            <a href="https://api.whatsapp.com/send?phone=085250760707"  class="btn btn-primary px-3 d-none d-lg-block" target="_blank">Daftar Online</a>
         </div>
     </nav>
     <!-- Navbar End -->

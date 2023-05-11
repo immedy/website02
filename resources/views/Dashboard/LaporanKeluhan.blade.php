@@ -1,4 +1,4 @@
-@extends('Layout.DashboardLayout')
+@extends('Layout.DashboardTemplate')
 @section('DashboardLayout')
 <div class="card">
     <div class="card-header">

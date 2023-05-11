@@ -1,6 +1,6 @@
-@extends('Layout.DashboardLayout')
+@extends('Layout.DashboardTemplate')
 @section('DashboardLayout')
-    <div class="card">
+    <div class="card border border-info">
         <div class="card-body">
             <div class="buttons d-flex flex-row-reverse">
                 <a href="/home/create" class="btn icon btn-primary"><span class="bi bi-pencil">Tambah Referessi
@@ -11,8 +11,8 @@
                     <thead>
                         <tr>
                             <th>No</th>
-                            <th>Menu</th>
-                            <th>Deskripsi Menu</th>
+                            <th style="width: 30%">Menu</th>
+                            <th style="width: 40%">Deskripsi Menu</th>
                             <th style="text-align: center">Aksi</th>
                         </tr>
                     </thead>
@@ -38,8 +38,6 @@
                                             <i class="bi bi-trash"></i></button>
                                     </form>
                                 </td>
-
-
                             </tr>
                         @endforeach
                     </tbody>

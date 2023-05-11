@@ -1,5 +1,5 @@
- @extends('Layout.DashboardLayout')
- @section('DashboardLayout')
+@extends('Layout.DashboardTemplate')
+@section('DashboardLayout')
  <section id="basic-horizontal-layouts">
     <div class="row match-height">
         <div class="col-md-12 col-12">
